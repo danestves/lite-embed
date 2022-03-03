@@ -1,11 +1,14 @@
 {
   "name": "lite-embed-project",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "npm run prepublish",
     "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'",
     "lerna": "lerna",
-    "prepublish": "lerna run prepublish",
+    "prepublishOnly": "lerna run prepublish",
     "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish && release --pre --skip-questions",
     "publish:stable": "lerna version --force-publish"
   },
