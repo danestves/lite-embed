@@ -1,6 +1,9 @@
 {
   "name": "lite-embed-project",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "npm run prepublish",
     "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'",
