@@ -1,0 +1,60 @@
+{
+  "name": "@lite-embed/react-youtube",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/danestves/lite-embed#readme",
+  "bugs": {
+    "url": "https://github.com/danestves/lite-embed/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danestves/lite-embed.git"
+  },
+  "license": "ISC",
+  "author": "Daniel Esteves <me+github@danestves.com>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.es.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "run-p build:*",
+    "build:scripts": "vite build",
+    "build:types": "tsc && tsc-alias",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.7"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.2",
+    "tsc-alias": "^1.6.3",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.6"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
