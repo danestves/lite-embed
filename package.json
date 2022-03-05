@@ -9,7 +9,7 @@
     "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'",
     "lerna": "lerna",
     "prepublishOnly": "lerna run prepublish",
-    "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish && release --pre --skip-questions",
+    "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish",
     "publish:stable": "lerna version --force-publish"
   },
   "devDependencies": {
