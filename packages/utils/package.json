@@ -44,12 +44,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "@types/youtube": "^0.0.46",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "tsc-alias": "^1.6.4",
-    "typescript": "^4.5.4",
-    "vite": "^2.8.0"
+    "@types/youtube": "^0.0.46"
   },
   "publishConfig": {
     "access": "public"
