@@ -1,14 +1,13 @@
 // Dependencies
 import * as React from "react";
-import { addPrefetch, getYouTubeId } from "@lite-embed/utils";
+import { addPrefetch, getYouTubeId, getYoutubeVars } from "@lite-embed/utils";
 
 // Internals
 import {
   StyledAspectRatio,
   StyledIframe,
   StyledYouTubeIcon,
-} from "./react-youtube-lite.styles";
-import { getSrcSearch } from "../utils/get-src-search";
+} from "./youtube-lite.styles";
 import type { YouTubeLiteProps } from "@/types";
 
 function RenderYouTubeLite(
@@ -84,10 +83,11 @@ function RenderYouTubeLite(
           width={560}
           height={315}
           title={title}
-          src={getSrcSearch({
+          src={getYoutubeVars({
             url: iframeSrc,
             videoId,
             isPlaylist: playlist,
+            ...playerParameters,
           })}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -102,4 +102,4 @@ function RenderYouTubeLite(
 
 const YouTubeLite = React.forwardRef(RenderYouTubeLite);
 
-export { YouTubeLite };
+export default YouTubeLite;

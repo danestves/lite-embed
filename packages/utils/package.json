@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "author": "Daniel Esteves <me+github@danestves.com>",
+  "sideEffects": false,
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
@@ -29,11 +30,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
+    "dev": "vite",
+    "preview": "vite preview",
     "prepublish": "npm run build"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "@types/youtube": "^0.0.46",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   },
