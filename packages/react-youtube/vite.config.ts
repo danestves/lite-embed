@@ -2,6 +2,7 @@
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // Internals
 import { peerDependencies, dependencies } from "./package.json";
@@ -26,6 +27,7 @@ export default defineConfig({
     react({
       jsxRuntime: "classic",
     }),
+    tsconfigPaths(),
   ],
   resolve: {
     alias: {

@@ -50,12 +50,7 @@
     "@types/react-dom": "^17.0.13",
     "@types/youtube": "^0.0.46",
     "@vitejs/plugin-react": "^1.2.0",
-    "npm-run-all": "^4.1.5",
-    "react": "^17.0.2",
-    "rimraf": "^3.0.2",
-    "tsc-alias": "^1.6.4",
-    "typescript": "^4.6.2",
-    "vite": "^2.8.6"
+    "react": "^17.0.2"
   },
   "peerDependencies": {
     "react": "^17.0.2"
