@@ -15,8 +15,8 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
+      "require": "./dist/lite-embed-utils.cjs.js",
+      "import": "./dist/lite-embed-utils.es.js"
     },
     "./dist/style.css": "./dist/style.css"
   },

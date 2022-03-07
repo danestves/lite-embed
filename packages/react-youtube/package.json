@@ -15,13 +15,13 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
+      "require": "./dist/lite-embed-react-youtube.cjs.js",
+      "import": "./dist/lite-embed-react-youtube.es.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "main": "dist/lite-embed-react-youtube.cjs.js",
+  "module": "dist/lite-embed-react-youtube.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "src": "src"
