@@ -33,7 +33,7 @@
     "preview": "vite preview",
     "build": "run-p build:*",
     "build:scripts": "vite build",
-    "build:types": "tsc && tsc-alias",
+    "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "prepublish": "npm run build"
   },
   "dependencies": {
