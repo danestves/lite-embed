@@ -32,7 +32,7 @@
   "scripts": {
     "build": "run-p build:*",
     "build:scripts": "vite build",
-    "build:types": "tsc && tsc-alias",
+    "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "dev": "vite",
     "preview": "vite preview",
     "prepublish": "npm run build"
