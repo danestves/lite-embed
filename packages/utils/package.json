@@ -1,6 +1,6 @@
 {
-  "name": "@lite-embed/react-youtube",
-  "version": "0.0.4-canary.0",
+  "name": "@lite-embed/utils",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -12,7 +12,6 @@
   },
   "license": "MIT",
   "author": "Daniel Esteves <me+github@danestves.com>",
-  "sideEffects": false,
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
@@ -38,21 +37,12 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.7"
+    "browser-monads-ts": "^1.2.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.13",
-    "@vitejs/plugin-react": "^1.2.0",
-    "npm-run-all": "^4.1.5",
-    "react": "^17.0.2",
-    "tsc-alias": "^1.6.4",
-    "typescript": "^4.6.2",
-    "vite": "^2.8.6"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2"
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
   },
   "publishConfig": {
     "access": "public"
