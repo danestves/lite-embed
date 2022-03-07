@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/react-youtube",
-  "version": "0.1.0",
+  "version": "0.1.1-canary.0",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -40,7 +40,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@lite-embed/utils": "*",
+    "@lite-embed/utils": "0.1.1-canary.0",
     "@radix-ui/react-aspect-ratio": "^0.1.4",
     "@stitches/react": "^1.2.7"
   },
