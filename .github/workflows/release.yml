@@ -27,9 +27,13 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: |
-          npm ci
-          npx lerna bootstrap
+        run: npm ci
+
+      - name: Symlink packages
+        run: npm run lerna link
+
+      - name: Bootstrap dependencies
+        run: npm run lerna bootstrap
 
       - name: Fetch git tags
         run: node ./scripts/fetch-tags.mjs ${{ github.sha }}
