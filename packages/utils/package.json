@@ -12,6 +12,7 @@
   },
   "license": "MIT",
   "author": "Daniel Esteves <me+github@danestves.com>",
+  "sideEffects": false,
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
@@ -29,11 +30,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc && tsc-alias",
+    "dev": "vite",
+    "preview": "vite preview",
     "prepublish": "npm run build"
   },
   "dependencies": {
