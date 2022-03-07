@@ -1,3 +1,6 @@
+// Dependencies
+import * as React from "react";
+
 function YouTubeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
