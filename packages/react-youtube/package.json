@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/react-youtube",
-  "version": "0.0.4-canary.2",
+  "version": "0.0.4-canary.3",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -38,12 +38,15 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
+    "@lite-embed/utils": "*",
+    "@radix-ui/react-aspect-ratio": "^0.1.4",
     "@stitches/react": "^1.2.7"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.13",
+    "@types/youtube": "^0.0.46",
     "@vitejs/plugin-react": "^1.2.0",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
