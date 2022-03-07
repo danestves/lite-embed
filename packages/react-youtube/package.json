@@ -32,10 +32,12 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
+    "prebuild": "npm run clean",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@lite-embed/utils": "*",
@@ -50,6 +52,7 @@
     "@vitejs/plugin-react": "^1.2.0",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
+    "rimraf": "^3.0.2",
     "tsc-alias": "^1.6.4",
     "typescript": "^4.6.2",
     "vite": "^2.8.6"
