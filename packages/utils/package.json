@@ -42,10 +42,6 @@
   "dependencies": {
     "browser-monads-ts": "^1.2.5"
   },
-  "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@types/youtube": "^0.0.46"
-  },
   "publishConfig": {
     "access": "public"
   }
