@@ -26,14 +26,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Symlink packages
-        run: npm run lerna link
-
       - name: Bootstrap dependencies
         run: npm run lerna bootstrap
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Fetch git tags
         run: node ./scripts/fetch-tags.mjs ${{ github.sha }}

@@ -39,7 +39,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@lite-embed/utils": "0.2.1-canary.0"
+    "@lite-embed/utils": "*"
   },
   "peerDependencies": {
     "vue": "^3.2.31"
