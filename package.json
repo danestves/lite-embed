@@ -13,6 +13,7 @@
     "publish:stable": "lerna version --force-publish"
   },
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/youtube": "^0.0.46",
     "@vitejs/plugin-react": "^1.2.0",
