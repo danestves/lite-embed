@@ -8,7 +8,7 @@
     "build": "npm run prepublish",
     "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'",
     "lerna": "lerna",
-    "prepublishOnly": "lerna run prepublish",
+    "prepublishOnly": "lerna run prepublish --scope @lite-embed/utils && lerna run prepublish --ignore @lite-embed/utils",
     "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish",
     "publish:stable": "lerna version --force-publish"
   },
