@@ -17,7 +17,8 @@
     ".": {
       "import": "./dist/lite-embed-vue-youtube.es.js",
       "require": "./dist/lite-embed-vue-youtube.umd.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "main": "dist/lite-embed-vue-youtube.umd.js",
   "module": "dist/lite-embed-vue-youtube.es.js",

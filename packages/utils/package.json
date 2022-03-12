@@ -17,8 +17,7 @@
     ".": {
       "require": "./dist/lite-embed-utils.cjs.js",
       "import": "./dist/lite-embed-utils.es.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "main": "dist/lite-embed-utils.cjs.js",
   "module": "dist/lite-embed-utils.es.js",
