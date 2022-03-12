@@ -39,7 +39,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "browser-monads-ts": "^2.0.0-canary.2"
+    "browser-monads-ts": "^2.0.1"
   },
   "publishConfig": {
     "access": "public"

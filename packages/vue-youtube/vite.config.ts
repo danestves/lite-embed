@@ -1,7 +1,9 @@
 // Dependencies
+import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 // Internals
@@ -25,9 +27,23 @@ export default defineConfig({
           vue: "Vue",
         },
       },
+      plugins: [rollupNodePolyFill()],
     },
     target: "esnext",
     sourcemap: true,
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: "globalThis",
+      },
+      plugins: [
+        NodeGlobalsPolyfillPlugin({
+          process: true,
+          buffer: true,
+        }),
+      ],
+    },
   },
   plugins: [vue(), tsconfigPaths()],
   resolve: {
