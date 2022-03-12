@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/vue-youtube",
-  "version": "0.3.0",
+  "version": "0.3.1-canary.0",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -40,7 +40,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@lite-embed/utils": "*"
+    "@lite-embed/utils": "0.3.1-canary.0"
   },
   "peerDependencies": {
     "vue": "^3.2.31"
