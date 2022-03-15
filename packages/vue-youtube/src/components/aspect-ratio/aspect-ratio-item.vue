@@ -1,11 +1,11 @@
 <template>
-  <div data-lt="aspect-ratio-item">
+  <div data-le="aspect-ratio-item">
     <slot></slot>
   </div>
 </template>
 
 <style scoped>
-[data-lt="aspect-ratio-item"] {
+[data-le="aspect-ratio-item"] {
   background-color: #000;
   background-position: center;
   background-size: cover;
@@ -18,7 +18,7 @@
   top: 0;
 }
 
-[data-lt="aspect-ratio-item"]::before {
+[data-le="aspect-ratio-item"]::before {
   content: "";
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
   background-repeat: repeat-x;

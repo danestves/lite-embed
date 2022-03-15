@@ -6,6 +6,7 @@ import type { PropType } from "vue";
 
 // Internals
 import { AspectRatio, AspectRatioItem } from "../aspect-ratio";
+import YoutubeIcon from "../icons/youtube-icon.vue";
 import type { PosterQuality } from "@/types";
 
 let props = defineProps({
@@ -112,18 +113,38 @@ const addIframe = () => {
     <aspect-ratio-item :style="{ backgroundImage: `url(${posterUrl})` }">
       <iframe
         v-if="iframe"
-        data-lt="iframe"
+        data-le="iframe"
         :title="$props.title"
         :src="iframeSrc"
       ></iframe>
+      <youtube-icon v-else data-le="icon" />
     </aspect-ratio-item>
   </aspect-ratio>
 </template>
 
 <style scoped>
-[data-lt="iframe"] {
+[data-le="iframe"] {
   border: 0;
   height: 100%;
   width: 100%;
+}
+
+[data-le="icon"] {
+  box-sizing: border-box;
+  color: #212121;
+  height: auto;
+  left: 50%;
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  width: 68px;
+  z-index: 1;
+}
+
+[data-le="aspect-ratio"]:hover [data-le="icon"] {
+  color: #f00;
+  opacity: 1;
 }
 </style>
