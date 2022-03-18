@@ -1,5 +1,5 @@
 {
-  "name": "@lite-embed/vue-youtube",
+  "name": "@lite-embed/react",
   "version": "0.3.1-canary.1",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
@@ -15,13 +15,13 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./dist/lite-embed-vue-youtube.es.js",
-      "require": "./dist/lite-embed-vue-youtube.umd.js"
+      "require": "./dist/lite-embed-react.cjs.js",
+      "import": "./dist/lite-embed-react.es.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "main": "dist/lite-embed-vue-youtube.umd.js",
-  "module": "dist/lite-embed-vue-youtube.es.js",
+  "main": "dist/lite-embed-react.cjs.js",
+  "module": "dist/lite-embed-react.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "src": "src"
@@ -33,17 +33,19 @@
     "prebuild": "npm run clean",
     "build": "run-p build:*",
     "build:scripts": "vite build",
-    "build:types": "vue-tsc --emitDeclarationOnly && tsc-alias",
+    "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "clean": "rimraf dist",
     "dev": "vite",
     "preview": "vite preview",
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "@lite-embed/utils": "*"
+    "@lite-embed/utils": "*",
+    "@radix-ui/react-aspect-ratio": "^0.1.4",
+    "@stitches/react": "^1.2.7"
   },
   "peerDependencies": {
-    "vue": "^3.2.31"
+    "react": "^17.0.2"
   },
   "publishConfig": {
     "access": "public"

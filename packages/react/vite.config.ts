@@ -14,7 +14,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src", "index.ts"),
       formats: ["cjs", "es"],
-      fileName: (ext) => `lite-embed-react-youtube.${ext}.js`,
+      fileName: (ext) => `lite-embed-react.${ext}.js`,
     },
     rollupOptions: {
       external: [
