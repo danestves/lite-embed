@@ -13,7 +13,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src", "index.ts"),
-      fileName: (ext) => `lite-embed-vue-youtube.${ext}.js`,
+      fileName: (ext) => `lite-embed-vue.${ext}.js`,
       formats: ["es", "umd"],
       name: "YoutubeLite",
     },
