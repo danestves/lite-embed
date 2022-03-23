@@ -1,6 +1,10 @@
 <script setup lang="ts">
 // Dependencies
-import { addPrefetch, getYouTubeId, getYoutubeVars } from "@lite-embed/utils";
+import {
+  addPrefetch,
+  getYouTubeId,
+  getYoutubePlayerOptions,
+} from "@lite-embed/utils";
 import { ref } from "vue";
 import type { PropType } from "vue";
 
@@ -71,7 +75,7 @@ let youtubeUrl = props.noCookie
 let youtubeVideoUrl = !props.playlist
   ? `${youtubeUrl}/embed/${videoId}`
   : `${youtubeUrl}/embed/videoseries`;
-let iframeSrc = getYoutubeVars({
+let iframeSrc = getYoutubePlayerOptions({
   url: youtubeVideoUrl,
   videoId: videoId,
   isPlaylist: props.playlist,

@@ -1,8 +1,11 @@
 // Dependencies
-import type * as React from "react";
 import type * as Stitches from "@stitches/react";
+import type * as React from "react";
 
-type PosterQuality =
+// Internals
+import type { IframeProps } from ".";
+
+export type YoutubePosterQuality =
   | "maxresdefault"
   | "0"
   | "1"
@@ -13,14 +16,8 @@ type PosterQuality =
   | "mqdefault"
   | "sddefault";
 
-interface IframeProps extends React.ComponentPropsWithoutRef<"iframe"> {
-  /**
-   * It’s like the style attribute, but it supports tokens, media queries, nesting and token-aware values.
-   */
-  css?: Stitches.CSS;
-}
-
-interface YouTubeLiteProps extends React.ComponentPropsWithoutRef<"div"> {
+export interface YouTubeLiteProps
+  extends React.ComponentPropsWithoutRef<"div"> {
   /**
    * This can be either an url to a video or a video ID.
    */
@@ -81,7 +78,7 @@ interface YouTubeLiteProps extends React.ComponentPropsWithoutRef<"div"> {
    *
    * @default "hqdefault"
    */
-  poster?: PosterQuality;
+  poster?: YoutubePosterQuality;
   /**
    * The `data-title` to insert in the `iframe`
    *
@@ -89,5 +86,3 @@ interface YouTubeLiteProps extends React.ComponentPropsWithoutRef<"div"> {
    */
   title?: string;
 }
-
-export type { IframeProps, PosterQuality, YouTubeLiteProps };

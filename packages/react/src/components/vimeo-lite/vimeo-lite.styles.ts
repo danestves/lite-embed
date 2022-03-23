@@ -1,0 +1,48 @@
+// Dependencies
+import * as AspectRatio from "@radix-ui/react-aspect-ratio";
+
+// Internals
+import { styled } from "@/stitches.config";
+import { PlayIcon } from "@/components/icons/play-icon";
+
+const StyledAspectRatio = styled(AspectRatio.Root, {
+  backgroundColor: "#000",
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  contain: "content",
+  cursor: "pointer",
+  "& iframe": {
+    border: 0,
+    height: "100%",
+    width: "100%",
+  },
+});
+
+const StyledButton = styled("button", {
+  appearance: "none",
+  backgroundColor: "rgba(30, 30, 30, 0.9)",
+  border: 0,
+  borderRadius: "0.5em",
+  boxSizing: "border-box",
+  color: "#fff",
+  height: "4em",
+  lineHeight: "normal",
+  margin: 0,
+  padding: 0,
+  transition: "opacity 250ms ease-out,background-color 40ms,color 40ms",
+  verticalAlign: "baseline",
+  width: "6.5em",
+  [`${StyledAspectRatio}:hover &`]: {
+    backgroundColor: "#00adef",
+  },
+});
+
+const StyledVimeoIcon = styled(PlayIcon, {
+  boxSizing: "border-box",
+  height: "2em",
+  width: "2em",
+});
+
+const StyledIframe = styled("iframe", {});
+
+export { StyledAspectRatio, StyledIframe, StyledButton, StyledVimeoIcon };

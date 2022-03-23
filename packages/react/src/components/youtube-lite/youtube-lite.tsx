@@ -1,6 +1,10 @@
 // Dependencies
 import * as React from "react";
-import { addPrefetch, getYouTubeId, getYoutubeVars } from "@lite-embed/utils";
+import {
+  addPrefetch,
+  getYouTubeId,
+  getYoutubePlayerOptions,
+} from "@lite-embed/utils";
 
 // Internals
 import {
@@ -83,7 +87,7 @@ function RenderYouTubeLite(
           width={560}
           height={315}
           title={title}
-          src={getYoutubeVars({
+          src={getYoutubePlayerOptions({
             url: iframeSrc,
             videoId,
             isPlaylist: playlist,
