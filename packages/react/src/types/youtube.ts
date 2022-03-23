@@ -1,6 +1,7 @@
 // Dependencies
 import type * as Stitches from "@stitches/react";
 import type * as React from "react";
+import type * as Youtube from "youtube-player/dist/types";
 
 // Internals
 import type { IframeProps } from ".";
@@ -64,7 +65,7 @@ export interface YouTubeLiteProps
    * List of available parameters:
    * https://developers.google.com/youtube/player_parameters#Parameters
    */
-  playerParameters?: YT.PlayerVars;
+  playerParameters?: Youtube.Options["playerVars"];
   /**
    * If the video URL contains a playlist or not
    *
