@@ -5,6 +5,9 @@ import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+// Internals
+import { dependencies } from "./package.json";
+
 export default defineConfig({
   build: {
     lib: {
@@ -13,6 +16,7 @@ export default defineConfig({
       fileName: (ext) => `lite-embed-utils.${ext}.js`,
     },
     rollupOptions: {
+      external: [...Object.keys(dependencies)],
       plugins: [rollupNodePolyFill()],
     },
     target: "esnext",
