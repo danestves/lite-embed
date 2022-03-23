@@ -30,14 +30,14 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
+    "prebuild": "yarn clean",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "vue-tsc --emitDeclarationOnly && tsc-alias",
     "clean": "rimraf dist",
     "dev": "vite",
     "preview": "vite preview",
-    "prepublish": "npm run build"
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "@lite-embed/utils": "0.3.1-canary.13"
