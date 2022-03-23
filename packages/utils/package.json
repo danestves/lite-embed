@@ -29,14 +29,14 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
+    "prebuild": "yarn clean",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "clean": "rimraf dist",
     "dev": "vite",
     "preview": "vite preview",
-    "prepublish": "npm run build"
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "browser-monads-ts": "^2.0.1"
