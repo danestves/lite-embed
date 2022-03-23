@@ -1,16 +1,16 @@
-type GetYoutubeVarsProps = {
+type YoutubeOptions = {
   isPlaylist?: boolean;
   url: string;
   videoId: string;
   opts?: YT.PlayerVars;
 };
 
-function getYoutubeVars({
+function getYoutubePlayerOptions({
   url,
   videoId,
   isPlaylist,
   opts,
-}: GetYoutubeVarsProps) {
+}: YoutubeOptions) {
   let options: YT.PlayerVars = {
     ...(!isPlaylist
       ? {
@@ -27,5 +27,5 @@ function getYoutubeVars({
   return `${url}?${params.toString()}`;
 }
 
-export type { GetYoutubeVarsProps };
-export default getYoutubeVars;
+export type { YoutubeOptions };
+export default getYoutubePlayerOptions;
