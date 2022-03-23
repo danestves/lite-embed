@@ -22,16 +22,16 @@ const StyledButton = styled("button", {
   appearance: "none",
   backgroundColor: "rgba(30, 30, 30, 0.9)",
   border: 0,
-  borderRadius: "0.5em",
+  borderRadius: 5,
   boxSizing: "border-box",
   color: "#fff",
-  height: "4em",
+  height: 40,
   lineHeight: "normal",
   margin: 0,
   padding: 0,
-  transition: "opacity 250ms ease-out,background-color 40ms,color 40ms",
+  transition: "opacity 250ms ease-out, background-color 40ms, color 40ms",
   verticalAlign: "baseline",
-  width: "6.5em",
+  width: 65,
   [`${StyledAspectRatio}:hover &`]: {
     backgroundColor: "#00adef",
   },
@@ -39,8 +39,8 @@ const StyledButton = styled("button", {
 
 const StyledVimeoIcon = styled(PlayIcon, {
   boxSizing: "border-box",
-  height: "2em",
-  width: "2em",
+  height: 20,
+  width: 20,
 });
 
 const StyledIframe = styled("iframe", {});

@@ -6,9 +6,15 @@ interface VimeoOptions extends Omit<Options, "id" | "url"> {
   url: string;
 }
 
-function getVimeoPlayerOptions({ url, adNetwork, ...opts }: VimeoOptions) {
+function getVimeoPlayerOptions({
+  url,
+  adNetwork,
+  autoplay = true,
+  ...opts
+}: VimeoOptions) {
   let options: Options = {
     url,
+    autoplay,
     dnt: !adNetwork,
     ...opts,
   };
