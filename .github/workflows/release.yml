@@ -37,9 +37,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Bootstrap dependencies
-        run: npm run lerna bootstrap
-
       - name: Fetch git tags
         run: node ./scripts/fetch-tags.mjs ${{ github.sha }}
 
