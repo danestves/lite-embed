@@ -108,13 +108,11 @@ const addIframe = () => {
 
 <template>
   <aspect-ratio
-    :style="{
-      '--aspect-ratio': aspectRatio,
-    }"
+    :aspect-ratio="aspectRatio"
     v-on:pointerover="warmConnections"
     v-on:click="addIframe"
   >
-    <aspect-ratio-item :style="{ backgroundImage: `url(${posterUrl})` }">
+    <aspect-ratio-item :background-image="posterUrl">
       <iframe
         v-if="iframe"
         data-le="iframe"

@@ -1,3 +1,13 @@
+<script setup lang="ts">
+defineProps({
+  backgroundImage: {
+    type: String,
+    default: "",
+    required: true,
+  },
+});
+</script>
+
 <template>
   <div data-le="aspect-ratio-item">
     <slot></slot>
@@ -7,6 +17,7 @@
 <style scoped>
 [data-le="aspect-ratio-item"] {
   background-color: #000;
+  background-image: url(v-bind(backgroundImage));
   background-position: center;
   background-size: cover;
   contain: content;
