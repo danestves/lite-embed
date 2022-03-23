@@ -3,11 +3,14 @@ changelog:
     - title: Documentation Changes 📃
       labels:
         - docs
+        - documentation
     - title: Features 🎉
       labels:
+        - enhancement
         - feat
     - title: Bug Fixes 🐛
       labels:
+        - bug
         - fix
     - title: Other Changes 🤷‍♂️
       labels:
