@@ -21,7 +21,7 @@ export interface YouTubeLiteProps
   /**
    * This can be either an url to a video or a video ID.
    */
-  url: string;
+  urlOrId: string;
   /**
    * Preconnect or not doubleclick ads, this is the adnetwork from Google.
    *
