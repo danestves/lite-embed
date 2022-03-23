@@ -20,7 +20,7 @@ defineProps({
 <style scoped>
 [data-le="aspect-ratio"] {
   position: relative;
-  padding-bottom: calc(100% / (v-bind(aspectRatio)));
+  padding-bottom: calc(100% / (v-bind("aspectRatio")));
   width: 100%;
 }
 </style>

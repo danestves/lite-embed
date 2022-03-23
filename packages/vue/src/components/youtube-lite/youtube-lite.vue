@@ -112,7 +112,7 @@ const addIframe = () => {
     v-on:pointerover="warmConnections"
     v-on:click="addIframe"
   >
-    <aspect-ratio-item :background-image="posterUrl">
+    <aspect-ratio-item :background-image="`url(${posterUrl})`">
       <iframe
         v-if="iframe"
         data-le="iframe"
