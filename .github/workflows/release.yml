@@ -13,10 +13,18 @@ jobs:
     outputs:
       isRelease: ${{ steps.check-release.outputs.IS_RELEASE }}
     steps:
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 25
+
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -26,11 +34,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Bootstrap dependencies
-        run: npm run lerna bootstrap
-
       - name: Install dependencies
         run: npm ci
+
+      - name: Bootstrap dependencies
+        run: npm run lerna bootstrap
 
       - name: Fetch git tags
         run: node ./scripts/fetch-tags.mjs ${{ github.sha }}
@@ -64,6 +72,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
+
+      # https://github.com/actions/virtual-environments/issues/1187
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
 
       - name: Restore build
         uses: actions/cache@v2
