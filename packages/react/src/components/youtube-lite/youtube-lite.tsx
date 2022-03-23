@@ -16,7 +16,7 @@ import type { YouTubeLiteProps } from "@/types";
 
 function RenderYouTubeLite(
   {
-    url,
+    urlOrId,
     adNetwork,
     aspectRatio = 16 / 9,
     css,
@@ -34,7 +34,7 @@ function RenderYouTubeLite(
   let [preconnected, setPreconnected] = React.useState(false);
   let [iframe, setIframe] = React.useState(false);
 
-  let videoId = encodeURIComponent(getYouTubeId(url));
+  let videoId = encodeURIComponent(getYouTubeId(urlOrId));
   let posterUrl =
     typeof customThumbnail === "string"
       ? customThumbnail
