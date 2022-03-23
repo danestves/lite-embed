@@ -6,6 +6,7 @@ import {
   getYoutubePlayerOptions,
 } from "@lite-embed/utils";
 import { ref } from "vue";
+import type * as Youtube from "youtube-player/dist/types";
 import type { PropType } from "vue";
 
 // Internals
@@ -41,7 +42,7 @@ let props = defineProps({
     required: false,
   },
   playerParameters: {
-    type: Object as PropType<YT.PlayerVars>,
+    type: Object as PropType<Youtube.Options["playerVars"]>,
     default: () => ({}),
     required: false,
   },
