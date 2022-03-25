@@ -8,3 +8,10 @@ export type PosterQuality =
   | "hqdefault"
   | "mqdefault"
   | "sddefault";
+
+export type VimeoPosterQuality =
+  | "120x90"
+  | "480x360"
+  | "320x180"
+  | "640x480"
+  | "1280x720";
