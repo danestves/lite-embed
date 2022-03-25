@@ -1,10 +1,10 @@
 // Dependencies
 import * as React from "react";
 import {
-  addPrefetch,
   canUseWebP,
   getVimeoId,
   getVimeoPlayerOptions,
+  warmVimeoConnections,
 } from "@lite-embed/utils";
 
 // Internals
@@ -39,21 +39,11 @@ function RenderVimeoLite(
   let iframeSrc = `https://player.vimeo.com/video/${videoId}?h=${Math.random()}`;
 
   const warmConnections = () => {
-    if (preconnected) return;
-
-    // The iframe document and most of its subresources come right off player.vimeo.com
-    addPrefetch("preconnect", "https://player.vimeo.com");
-    // Images come right off i.vimeocdn.com
-    addPrefetch("preconnect", "https://i.vimeocdn.com");
-    // CSS and JS come right off f.vimeo.com
-    addPrefetch("preconnect", "https://f.vimeocdn.com");
-
-    if (adNetwork) {
-      // Metrics for the videos
-      addPrefetch("preconnect", "https://fresnel.vimeocdn.com");
-    }
-
-    setPreconnected(true);
+    return warmVimeoConnections({
+      preconnected,
+      setPreconnected,
+      adNetwork,
+    });
   };
 
   const addIframe = () => {

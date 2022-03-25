@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // Dependencies
 import {
-  addPrefetch,
   canUseWebP,
   getVimeoPlayerOptions,
   getYouTubeId,
+  warmVimeoConnections,
 } from "@lite-embed/utils";
 import { onMounted, ref } from "vue";
 import type * as Vimeo from "vimeo__player";
@@ -67,21 +67,13 @@ let iframeSrc = getVimeoPlayerOptions({
 });
 
 const warmConnections = () => {
-  if (preconnected.value) return;
-
-  // The iframe document and most of its subresources come right off player.vimeo.com
-  addPrefetch("preconnect", "https://player.vimeo.com");
-  // Images come right off i.vimeocdn.com
-  addPrefetch("preconnect", "https://i.vimeocdn.com");
-  // CSS and JS come right off f.vimeo.com
-  addPrefetch("preconnect", "https://f.vimeocdn.com");
-
-  if (props.adNetwork) {
-    // Metrics for the videos
-    addPrefetch("preconnect", "https://fresnel.vimeocdn.com");
-  }
-
-  preconnected.value = true;
+  return warmVimeoConnections({
+    preconnected: preconnected.value,
+    setPreconnected: (value) => {
+      preconnected.value = value;
+    },
+    adNetwork: props.adNetwork,
+  });
 };
 
 const addIframe = () => {
