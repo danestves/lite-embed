@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/react",
-  "version": "1.0.0-canary.0",
+  "version": "1.0.0-canary.1",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -40,7 +40,7 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "@lite-embed/utils": "1.0.0-canary.0",
+    "@lite-embed/utils": "1.0.0-canary.1",
     "@radix-ui/react-aspect-ratio": "^0.1.4",
     "@stitches/react": "^1.2.7"
   },
