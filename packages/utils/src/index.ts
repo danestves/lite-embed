@@ -13,6 +13,9 @@ export * from "./get-vimeo-id";
 export { default as getVimeoPlayerOptions } from "./get-vimeo-player-options";
 export * from "./get-vimeo-player-options";
 
+export { default as getVimeoPosterUrl } from "./get-vimeo-poster-url";
+export * from "./get-vimeo-poster-url";
+
 export { default as getYouTubeId } from "./get-youtube-id";
 export * from "./get-youtube-id";
 
