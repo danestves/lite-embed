@@ -18,3 +18,9 @@ export * from "./get-youtube-id";
 
 export { default as getYoutubePlayerOptions } from "./get-youtube-player-options";
 export * from "./get-youtube-player-options";
+
+export { default as warmVimeoConnections } from "./warm-vimeo-connections";
+export * from "./warm-vimeo-connections";
+
+export { default as warmYoutubeConnections } from "./warm-youtube-connections";
+export * from "./warm-youtube-connections";
