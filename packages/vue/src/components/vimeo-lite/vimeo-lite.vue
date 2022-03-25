@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // Dependencies
 import {
-  canUseWebP,
+  getVimeoId,
   getVimeoPlayerOptions,
-  getYouTubeId,
+  getVimeoPosterUrl,
   warmVimeoConnections,
 } from "@lite-embed/utils";
 import { onMounted, ref } from "vue";
@@ -44,7 +44,7 @@ let props = defineProps({
   },
   poster: {
     type: String as PropType<VimeoPosterQuality>,
-    default: "hqdefault",
+    default: "640x480",
     required: false,
   },
   title: {
@@ -58,7 +58,7 @@ let preconnected = ref(false);
 let iframe = ref(false);
 let posterUrl = ref("");
 
-let videoId = decodeURIComponent(getYouTubeId(props.urlOrId));
+let videoId = decodeURIComponent(getVimeoId(props.urlOrId));
 let vimeoUrl = `https://player.vimeo.com/video/${videoId}?h=${Math.random()}`;
 let iframeSrc = getVimeoPlayerOptions({
   url: vimeoUrl,
@@ -83,25 +83,11 @@ const addIframe = () => {
 };
 
 onMounted(() => {
-  const getPosterUrl = async () => {
-    if (typeof props.customThumbnail === "string") {
-      return props.customThumbnail;
-    }
-
-    let result = await fetch(
-      `https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/${videoId}`
-    ).then((res) => res.json());
-
-    let thumbnailUrl = result?.thumbnail_url || "";
-
-    // Replace the current size with the poster variable
-    // i.e https://i.vimeocdn.com/video/554912674-5b4fc6c5c9041034676a60ecf1cc987c8a79e35ddb4352782efaa7f1cf96f107-d_295x166
-    return `${thumbnailUrl.replace(/\d+x\d+/, props.poster)}.${
-      canUseWebP() ? "webp" : "jpg"
-    }`;
-  };
-
-  getPosterUrl().then((url) => {
+  getVimeoPosterUrl({
+    videoId,
+    customThumbnail: props.customThumbnail,
+    poster: props.poster,
+  }).then((url) => {
     posterUrl.value = url;
   });
 });
