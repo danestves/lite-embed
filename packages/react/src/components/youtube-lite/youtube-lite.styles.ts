@@ -17,7 +17,7 @@ const StyledAspectRatio = styled(AspectRatio.Root, {
       "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==)",
     backgroundRepeat: "repeat-x",
     backgroundPosition: "top",
-    boxSizing: "border-box",
+    boxSizing: "content-box",
     display: "block",
     height: 60,
     paddingBottom: 50,
