@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/vue",
-  "version": "0.3.1-canary.21",
+  "version": "0.3.1-canary.22",
   "description": "> TODO: description",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -40,7 +40,7 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "@lite-embed/utils": "0.3.1-canary.21"
+    "@lite-embed/utils": "0.3.1-canary.22"
   },
   "peerDependencies": {
     "vue": "^3.2.31"
