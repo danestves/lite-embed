@@ -2,9 +2,9 @@
 import "@testing-library/jest-dom";
 
 // Internals
-import VimeoLite from "./vimeo-lite";
-import { render } from "other/test.utils";
-import type { VimeoLiteProps } from "../../types";
+import { render } from "../other/test.utils";
+import { VimeoLite } from "../src";
+import type { VimeoLiteProps } from "../src/types";
 
 let props: VimeoLiteProps = {
   urlOrId: "https://vimeo.com/148751763",

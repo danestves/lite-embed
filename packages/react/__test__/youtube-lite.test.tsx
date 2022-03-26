@@ -1,10 +1,12 @@
+/// <reference types="vite/client" />
+
 // Dependencies
 import "@testing-library/jest-dom";
 
 // Internals
-import YoutubeLite from "./youtube-lite";
-import { render } from "other/test.utils";
-import type { YouTubeLiteProps } from "../../types";
+import { render } from "../other/test.utils";
+import { YoutubeLite } from "../src";
+import type { YouTubeLiteProps } from "../src/types";
 
 let props: YouTubeLiteProps = {
   urlOrId: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",

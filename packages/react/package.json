@@ -17,8 +17,7 @@
     ".": {
       "require": "./dist/lite-embed-react.cjs.js",
       "import": "./dist/lite-embed-react.es.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+    }
   },
   "main": "dist/lite-embed-react.cjs.js",
   "module": "dist/lite-embed-react.es.js",
@@ -33,7 +32,7 @@
     "prebuild": "yarn clean",
     "build": "run-p build:*",
     "build:scripts": "vite build",
-    "build:types": "tsc --emitDeclarationOnly && tsc-alias",
+    "build:types": "tsc --emitDeclarationOnly -p ./tsconfig.build.json && tsc-alias",
     "clean": "rimraf dist",
     "coverage": "vitest run --coverage",
     "dev": "vite",
