@@ -53,8 +53,11 @@ export default defineConfig({
     },
   },
   test: {
-    globals: true,
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
     environment: "jsdom",
-    setupFiles: "./vitest/setup.ts",
+    globals: true,
+    setupFiles: "./other/test.setup.ts",
   },
 });

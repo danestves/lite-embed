@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 
 // Internals
 import YoutubeLite from "./youtube-lite";
-import { render } from "../../utils";
+import { render } from "other/test.utils";
 import type { YouTubeLiteProps } from "../../types";
 
 let props: YouTubeLiteProps = {
