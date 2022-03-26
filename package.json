@@ -32,12 +32,12 @@
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
     "rollup-plugin-node-polyfills": "^0.2.1",
-    "tsc-alias": "^1.6.4",
+    "tsc-alias": "^1.6.5",
     "typescript": "^4.6.3",
     "vite": "^2.8.6",
     "vite-tsconfig-paths": "^3.4.1",
     "vitest": "^0.7.11",
     "vue": "^3.2.31",
-    "vue-tsc": "^0.33.7"
+    "vue-tsc": "^0.33.9"
   }
 }
