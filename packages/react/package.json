@@ -51,7 +51,8 @@
     "@testing-library/react": "^12.1.4",
     "@vitest/ui": "^0.7.11",
     "c8": "^7.11.0",
-    "jsdom": "^19.0.0"
+    "jsdom": "^19.0.0",
+    "node-fetch": "^3.2.3"
   },
   "peerDependencies": {
     "react": "^17.0.2"

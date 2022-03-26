@@ -91,7 +91,11 @@ function RenderYouTubeLite(
           {...iframeProps}
         ></StyledIframe>
       ) : (
-        <StyledButton type="button" data-testid="youtube-lite-button">
+        <StyledButton
+          type="button"
+          data-testid="youtube-lite-button"
+          aria-label="Play"
+        >
           <StyledYouTubeIcon />
         </StyledButton>
       )}

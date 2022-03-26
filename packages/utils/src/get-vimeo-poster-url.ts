@@ -1,3 +1,6 @@
+// Dependencies
+import fetch from "node-fetch";
+
 // Internals
 import canUseWebP from "./can-use-webp";
 
@@ -18,7 +21,7 @@ async function getVimeoPosterUrl({
 
   let result = await fetch(
     `https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/${videoId}`
-  ).then((res) => res.json());
+  ).then((res: any) => res.json());
 
   let thumbnailUrl = result.thumbnail_url || "";
 
