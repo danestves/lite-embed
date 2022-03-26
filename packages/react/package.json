@@ -35,14 +35,24 @@
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "clean": "rimraf dist",
+    "coverage": "vitest run --coverage",
     "dev": "vite",
     "preview": "vite preview",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "test": "vitest --ui"
   },
   "dependencies": {
     "@lite-embed/utils": "1.0.0-canary.1",
     "@radix-ui/react-aspect-ratio": "^0.1.4",
     "@stitches/react": "^1.2.7"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@vitest/ui": "^0.7.11",
+    "jsdom": "^19.0.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

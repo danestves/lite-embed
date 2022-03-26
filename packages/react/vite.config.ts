@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 // Dependencies
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import react from "@vitejs/plugin-react";
@@ -49,5 +51,10 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./vitest/setup.ts",
   },
 });

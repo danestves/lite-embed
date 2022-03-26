@@ -9,6 +9,7 @@ import {
 // Internals
 import {
   StyledAspectRatio,
+  StyledButton,
   StyledIframe,
   StyledYouTubeIcon,
 } from "./youtube-lite.styles";
@@ -86,10 +87,13 @@ function RenderYouTubeLite(
           })}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          data-testid="youtube-lite-iframe"
           {...iframeProps}
         ></StyledIframe>
       ) : (
-        <StyledYouTubeIcon />
+        <StyledButton type="button" data-testid="youtube-lite-button">
+          <StyledYouTubeIcon />
+        </StyledButton>
       )}
     </StyledAspectRatio>
   );
