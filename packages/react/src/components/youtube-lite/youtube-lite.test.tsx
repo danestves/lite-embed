@@ -18,10 +18,10 @@ describe("YoutubeLite", async () => {
   it("should render iframe after click", () => {
     let { getByTestId } = render(<YoutubeLite {...props} />);
 
-    let button = getByTestId("youtube-lite-button");
+    let button = getByTestId("youtube-lite-button") as HTMLButtonElement;
     button.click();
 
-    let iframe = getByTestId("youtube-lite-iframe");
+    let iframe = getByTestId("youtube-lite-iframe") as HTMLIFrameElement;
     expect(iframe).toBeInTheDocument();
   });
 
@@ -29,7 +29,7 @@ describe("YoutubeLite", async () => {
     let title = "Rick Astley - Never Gonna Give You Up";
     let { getByTestId } = render(<YoutubeLite title={title} {...props} />);
 
-    let button = getByTestId("youtube-lite-button");
+    let button = getByTestId("youtube-lite-button") as HTMLButtonElement;
     button.click();
 
     let iframe = getByTestId("youtube-lite-iframe") as HTMLIFrameElement;
@@ -39,7 +39,7 @@ describe("YoutubeLite", async () => {
   it("should render an iframe with the www.youtube-nocookie.com host", () => {
     let { getByTestId } = render(<YoutubeLite {...props} />);
 
-    let button = getByTestId("youtube-lite-button");
+    let button = getByTestId("youtube-lite-button") as HTMLButtonElement;
     button.click();
 
     let iframe = getByTestId("youtube-lite-iframe") as HTMLIFrameElement;
@@ -49,7 +49,7 @@ describe("YoutubeLite", async () => {
   it("should render an iframe with the www.youtube.com host", () => {
     let { getByTestId } = render(<YoutubeLite noCookie={false} {...props} />);
 
-    let button = getByTestId("youtube-lite-button");
+    let button = getByTestId("youtube-lite-button") as HTMLButtonElement;
     button.click();
 
     let iframe = getByTestId("youtube-lite-iframe") as HTMLIFrameElement;
