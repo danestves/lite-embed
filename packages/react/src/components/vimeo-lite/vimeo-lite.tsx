@@ -71,6 +71,7 @@ function RenderVimeoLite(
       data-title={title}
       ref={ref}
       ratio={aspectRatio}
+      data-testid="vimeo-lite-aspect-ratio"
       {...props}
     >
       {iframe ? (
@@ -85,10 +86,15 @@ function RenderVimeoLite(
           })}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          data-testid="vimeo-lite-iframe"
           {...iframeProps}
         ></StyledIframe>
       ) : (
-        <StyledButton type="button" aria-label="Play">
+        <StyledButton
+          type="button"
+          aria-label="Play"
+          data-testid="vimeo-lite-button"
+        >
           <StyledVimeoIcon />
         </StyledButton>
       )}

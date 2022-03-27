@@ -39,9 +39,11 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "browser-monads-ts": "^2.0.1"
+    "browser-monads-ts": "^2.0.1",
+    "node-fetch": "^3.2.3"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "devDependencies": {}
 }

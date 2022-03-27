@@ -1,23 +1,27 @@
 {
   "name": "lite-embed-project",
+  "version": "0.0.0",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
+    "coverage": "lerna run coverage",
+    "test": "lerna run test",
     "build": "yarn prepublish",
-    "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'",
     "lerna": "lerna",
     "prepublish": "lerna run prepublish",
     "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish",
     "publish:canary:major": "git checkout canary && git pull && lerna version premajor --preid canary --force-publish",
     "publish:canary:minor": "git checkout canary && git pull && lerna version preminor --preid canary --force-publish",
-    "publish:stable": "lerna version --force-publish"
+    "publish:stable": "lerna version --force-publish",
+    "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
     "@types/vimeo__player": "^2.16.2",
     "@types/youtube-player": "^5.5.6",
     "@vitejs/plugin-react": "^1.2.0",
@@ -25,13 +29,15 @@
     "lerna": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
     "rollup-plugin-node-polyfills": "^0.2.1",
-    "tsc-alias": "^1.6.4",
+    "tsc-alias": "^1.6.5",
     "typescript": "^4.6.3",
     "vite": "^2.8.6",
     "vite-tsconfig-paths": "^3.4.1",
+    "vitest": "^0.7.11",
     "vue": "^3.2.31",
-    "vue-tsc": "^0.33.7"
+    "vue-tsc": "^0.33.9"
   }
 }

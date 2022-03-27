@@ -33,18 +33,28 @@ const StyledAspectRatio = styled(AspectRatio.Root, {
   },
 });
 
+const StyledButton = styled("button", {
+  appearance: "none",
+  border: 0,
+  boxSizing: "border-box",
+  height: "auto",
+  left: "50%",
+  margin: 0,
+  outline: "none",
+  padding: 0,
+  top: "50%",
+  transform: "translate3d(-50%, -50%, 0)",
+  width: 68,
+  zIndex: 1,
+});
+
 const StyledYouTubeIcon = styled(YouTubeIcon, {
   boxSizing: "border-box",
   color: "#212121",
   height: "auto",
-  left: "50%",
   opacity: 0.8,
-  position: "absolute",
-  top: "50%",
-  transform: "translate3d(-50%, -50%, 0)",
   transition: "all 0.2s cubic-bezier(0, 0, 0.2, 1)",
   width: 68,
-  zIndex: 1,
   [`${StyledAspectRatio}:hover &`]: {
     color: "#f00",
     opacity: 1,
@@ -53,4 +63,4 @@ const StyledYouTubeIcon = styled(YouTubeIcon, {
 
 const StyledIframe = styled("iframe", {});
 
-export { StyledAspectRatio, StyledIframe, StyledYouTubeIcon };
+export { StyledAspectRatio, StyledIframe, StyledButton, StyledYouTubeIcon };
