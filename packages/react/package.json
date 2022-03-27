@@ -26,7 +26,10 @@
     "src": "src"
   },
   "files": [
-    "dist"
+    "LICENSE.md",
+    "README.md",
+    "dist",
+    "package.json"
   ],
   "scripts": {
     "prebuild": "yarn clean",
