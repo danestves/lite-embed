@@ -58,6 +58,6 @@ export default defineConfig({
     },
     environment: "jsdom",
     globals: true,
-    setupFiles: "./other/test.setup.ts",
+    setupFiles: "./jest.setup.ts",
   },
 });
