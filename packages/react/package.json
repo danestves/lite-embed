@@ -41,7 +41,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "prepublish": "yarn build",
-    "test": "vitest --run"
+    "test": "vitest run"
   },
   "dependencies": {
     "@lite-embed/utils": "1.0.0-canary.1",
