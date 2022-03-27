@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 // Dependencies
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import vue from "@vitejs/plugin-vue";
@@ -50,5 +52,13 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
     },
+  },
+  test: {
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./jest.setup.ts",
   },
 });
