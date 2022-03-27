@@ -28,7 +28,11 @@ let props = defineProps({
     type: [Number, String],
     default: 16 / 9,
     validator(value: number | string) {
-      return !isNaN(parseFloat(value as string));
+      if (typeof value === "number") {
+        return !isNaN(value);
+      }
+
+      return !isNaN(parseFloat(value));
     },
     required: false,
   },
@@ -38,7 +42,7 @@ let props = defineProps({
   },
   noCookie: {
     type: Boolean,
-    default: false,
+    default: true,
     required: false,
   },
   playerParameters: {
@@ -103,17 +107,26 @@ const addIframe = () => {
 <template>
   <aspect-ratio
     :aspect-ratio="aspectRatio"
-    v-on:pointerover="warmConnections"
     v-on:click="addIframe"
+    v-on:pointerover="warmConnections"
+    data-testid
   >
     <aspect-ratio-item :background-image="`url(${posterUrl})`">
       <iframe
         v-if="iframe"
-        data-le="iframe"
         :title="$props.title"
         :src="iframeSrc"
+        data-le="iframe"
+        data-testid="le-yt-iframe"
       ></iframe>
-      <youtube-icon v-else data-le="icon" />
+      <button
+        v-else
+        class="le-yt-button"
+        data-testid="le-yt-button"
+        type="button"
+      >
+        <youtube-icon class="le-yt-icon" />
+      </button>
     </aspect-ratio-item>
   </aspect-ratio>
 </template>
@@ -142,21 +155,31 @@ const addIframe = () => {
   width: 100%;
 }
 
-[data-le="icon"] {
+.le-yt-button {
+  appearance: none;
+  border: 0;
   box-sizing: border-box;
-  color: #212121;
   height: auto;
   left: 50%;
-  opacity: 0.8;
-  position: absolute;
+  margin: 0;
+  outline: none;
+  padding: 0;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
-  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   width: 68px;
   z-index: 1;
 }
 
-[data-le="aspect-ratio"]:hover [data-le="icon"] {
+.le-yt-icon {
+  box-sizing: border-box;
+  color: #212121;
+  height: auto;
+  opacity: 0.8;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  width: 68px;
+}
+
+[data-le="aspect-ratio"]:hover .le-yt-icon {
   color: #f00;
   opacity: 1;
 }
