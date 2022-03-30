@@ -107,12 +107,14 @@ onMounted(() => {
         :src="iframeSrc"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        data-testid="le-vi-iframe"
       ></iframe>
       <button
         v-else
         type="button"
         data-le="vimeo-play-button"
         aria-label="Play"
+        data-testid="le-vi-button"
       >
         <play-icon data-le="vimeo-play-icon" />
       </button>

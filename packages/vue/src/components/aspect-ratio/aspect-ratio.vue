@@ -4,7 +4,11 @@ defineProps({
     type: [Number, String],
     default: 16 / 9,
     validator(value: number | string) {
-      return !isNaN(parseFloat(value as string));
+      if (typeof value === "number") {
+        return !isNaN(value);
+      }
+
+      return !isNaN(parseFloat(value));
     },
     required: false,
   },

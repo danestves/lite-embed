@@ -87,13 +87,13 @@ function RenderYouTubeLite(
           })}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          data-testid="youtube-lite-iframe"
+          data-testid="le-yt-iframe"
           {...iframeProps}
         ></StyledIframe>
       ) : (
         <StyledButton
           type="button"
-          data-testid="youtube-lite-button"
+          data-testid="le-yt-button"
           aria-label="Play"
         >
           <StyledYouTubeIcon />

@@ -15,24 +15,26 @@ describe("VimeoLite", async () => {
     render(<VimeoLite {...props} />);
   });
 
-  it("should render an iframe after click", () => {
-    let { getByTestId } = render(<VimeoLite {...props} />);
+  describe("Iframe", () => {
+    it("should render after button click", () => {
+      let { getByTestId } = render(<VimeoLite {...props} />);
 
-    let button = getByTestId("vimeo-lite-button") as HTMLButtonElement;
-    button.click();
+      let button = getByTestId("vimeo-lite-button") as HTMLButtonElement;
+      button.click();
 
-    let iframe = getByTestId("vimeo-lite-iframe") as HTMLIFrameElement;
-    expect(iframe).toBeInTheDocument();
-  });
+      let iframe = getByTestId("vimeo-lite-iframe") as HTMLIFrameElement;
+      expect(iframe).toBeInTheDocument();
+    });
 
-  it("should render an iframe with a custom title", () => {
-    let title = "Rick Astley - Never Gonna Give You Up";
-    let { getByTestId } = render(<VimeoLite title={title} {...props} />);
+    it("should render with a custom title", () => {
+      let title = "Rick Astley - Never Gonna Give You Up";
+      let { getByTestId } = render(<VimeoLite title={title} {...props} />);
 
-    let button = getByTestId("vimeo-lite-button") as HTMLButtonElement;
-    button.click();
+      let button = getByTestId("vimeo-lite-button") as HTMLButtonElement;
+      button.click();
 
-    let iframe = getByTestId("vimeo-lite-iframe") as HTMLIFrameElement;
-    expect(iframe).toHaveAttribute("title", title);
+      let iframe = getByTestId("vimeo-lite-iframe") as HTMLIFrameElement;
+      expect(iframe).toHaveAttribute("title", title);
+    });
   });
 });
