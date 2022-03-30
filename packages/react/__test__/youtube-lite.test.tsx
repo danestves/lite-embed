@@ -23,54 +23,6 @@ describe("YoutubeLite", async () => {
     render(<YoutubeLite {...props} />);
   });
 
-  describe("Prefetch CDN", () => {
-    it("should add prefetch privacy links to head", async () => {
-      render(<YoutubeLite {...props} />);
-
-      warmYoutubeConnections({
-        preconnected: false,
-        setPreconnected: () => {},
-        adNetwork: false,
-      });
-
-      let links = [
-        "https://www.youtube-nocookie.com",
-        "https://www.google.com",
-      ];
-
-      // Check if links are in the head
-      links.forEach((link) => {
-        expect(
-          document.head.querySelector(`link[href="${link}"]`)
-        ).toBeTruthy();
-      });
-    });
-
-    it("should add prefetch links with ads to head", async () => {
-      render(<YoutubeLite {...props} />);
-
-      warmYoutubeConnections({
-        preconnected: false,
-        setPreconnected: () => {},
-        adNetwork: true,
-      });
-
-      let links = [
-        "https://www.youtube-nocookie.com",
-        "https://www.google.com",
-        "https://googleads.g.doubleclick.net",
-        "https://static.doubleclick.net",
-      ];
-
-      // Check if links are in the head
-      links.forEach((link) => {
-        expect(
-          document.head.querySelector(`link[href="${link}"]`)
-        ).toBeTruthy();
-      });
-    });
-  });
-
   describe("Iframe", () => {
     it("should render after button click", () => {
       let { getByTestId } = render(<YoutubeLite {...props} />);
