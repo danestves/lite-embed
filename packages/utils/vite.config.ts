@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 // Dependencies
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { resolve } from "path";
@@ -40,5 +42,13 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
     },
+  },
+  test: {
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
+    environment: "happy-dom",
+    globals: true,
+    setupFiles: "./jest.setup.ts",
   },
 });

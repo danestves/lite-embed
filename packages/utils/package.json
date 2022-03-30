@@ -34,9 +34,11 @@
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "clean": "rimraf dist",
+    "coverage": "vitest run --coverage",
     "dev": "vite",
     "preview": "vite preview",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build",
+    "test": "vitest run"
   },
   "dependencies": {
     "browser-monads-ts": "^2.0.1",
@@ -45,5 +47,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "happy-dom": "^2.52.0"
+  }
 }
