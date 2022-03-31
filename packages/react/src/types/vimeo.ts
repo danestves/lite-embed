@@ -1,19 +1,19 @@
 // Dependencies
-import type * as Stitches from "@stitches/react";
-import type * as React from "react";
-import type * as Vimeo from "vimeo__player";
+import type * as Stitches from '@stitches/react';
+import type * as React from 'react';
+import type * as Vimeo from 'vimeo__player';
 
 // Internals
-import type { IframeProps } from ".";
+import type { IframeProps } from '.';
 
 export type VimeoPosterQuality =
-  | "120x90"
-  | "480x360"
-  | "320x180"
-  | "640x480"
-  | "1280x720";
+  | '120x90'
+  | '480x360'
+  | '320x180'
+  | '640x480'
+  | '1280x720';
 
-export interface VimeoLiteProps extends React.ComponentPropsWithoutRef<"div"> {
+export interface VimeoLiteProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * This can be either an url to a video or a video ID.
    */
@@ -48,7 +48,7 @@ export interface VimeoLiteProps extends React.ComponentPropsWithoutRef<"div"> {
    * List of available parameters:
    * https://developer.vimeo.com/player/sdk/embed
    */
-  playerParameters?: Omit<Vimeo.Options, "id" | "url">;
+  playerParameters?: Omit<Vimeo.Options, 'id' | 'url'>;
   /**
    * The different quality to show the poster
    * see: https://developers.google.com/youtube/v3/docs/thumbnails

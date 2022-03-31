@@ -1,10 +1,10 @@
 // Dependencies
-import * as React from "react";
+import * as React from 'react';
 import {
   getYouTubeId,
   getYoutubePlayerOptions,
   warmYoutubeConnections,
-} from "@lite-embed/utils";
+} from '@lite-embed/utils';
 
 // Internals
 import {
@@ -12,8 +12,8 @@ import {
   StyledButton,
   StyledIframe,
   StyledYouTubeIcon,
-} from "./youtube-lite.styles";
-import type { YouTubeLiteProps } from "@/types";
+} from './youtube-lite.styles';
+import type { YouTubeLiteProps } from '@/types';
 
 function RenderYouTubeLite(
   {
@@ -26,24 +26,24 @@ function RenderYouTubeLite(
     noCookie = true,
     playerParameters,
     playlist,
-    poster = "hqdefault",
+    poster = 'hqdefault',
     title,
     ...props
   }: YouTubeLiteProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
-  let [preconnected, setPreconnected] = React.useState(false);
-  let [iframe, setIframe] = React.useState(false);
+  const [preconnected, setPreconnected] = React.useState(false);
+  const [iframe, setIframe] = React.useState(false);
 
-  let videoId = encodeURIComponent(getYouTubeId(urlOrId));
-  let posterUrl =
-    typeof customThumbnail === "string"
+  const videoId = encodeURIComponent(getYouTubeId(urlOrId));
+  const posterUrl =
+    typeof customThumbnail === 'string'
       ? customThumbnail
       : `https://i.ytimg.com/vi/${videoId}/${poster}.jpg`;
-  let youtubeUrl = noCookie
-    ? "https://www.youtube-nocookie.com"
-    : "https://www.youtube.com";
-  let iframeSrc = !playlist
+  const youtubeUrl = noCookie
+    ? 'https://www.youtube-nocookie.com'
+    : 'https://www.youtube.com';
+  const iframeSrc = !playlist
     ? `${youtubeUrl}/embed/${videoId}`
     : `${youtubeUrl}/embed/videoseries`;
 
@@ -67,34 +67,34 @@ function RenderYouTubeLite(
         backgroundImage: `url(${posterUrl})`,
         ...css,
       }}
-      onPointerOver={warmConnections}
-      onClick={addIframe}
       data-title={title}
-      ref={ref}
+      onClick={addIframe}
+      onPointerOver={warmConnections}
       ratio={aspectRatio}
+      ref={ref}
       {...props}
     >
       {iframe ? (
         <StyledIframe
-          width={560}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          data-testid="le-yt-iframe"
           height={315}
-          title={title}
           src={getYoutubePlayerOptions({
             url: iframeSrc,
             videoId,
             isPlaylist: playlist,
             ...playerParameters,
           })}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          data-testid="le-yt-iframe"
+          title={title}
+          width={560}
           {...iframeProps}
         ></StyledIframe>
       ) : (
         <StyledButton
-          type="button"
-          data-testid="le-yt-button"
           aria-label="Play"
+          data-testid="le-yt-button"
+          type="button"
         >
           <StyledYouTubeIcon />
         </StyledButton>
