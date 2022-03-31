@@ -1,11 +1,11 @@
 // Dependencies
-import type * as Youtube from "youtube-player/dist/types";
+import type * as Youtube from 'youtube-player/dist/types';
 
 type YoutubeOptions = {
   isPlaylist?: boolean;
   url: string;
   videoId: string;
-  opts?: Youtube.Options["playerVars"];
+  opts?: Youtube.Options['playerVars'];
 };
 
 function getYoutubePlayerOptions({
@@ -14,7 +14,7 @@ function getYoutubePlayerOptions({
   isPlaylist,
   opts,
 }: YoutubeOptions) {
-  let options: Youtube.Options["playerVars"] = {
+  let options: Youtube.Options['playerVars'] = {
     ...(!isPlaylist
       ? {
           autoplay: 1,

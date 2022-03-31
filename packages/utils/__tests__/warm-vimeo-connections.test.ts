@@ -1,11 +1,11 @@
 // Dependencies
-import { vi } from "vitest";
+import { vi } from 'vitest';
 
 // Internals
-import { warmVimeoConnections } from "../src";
+import { warmVimeoConnections } from '../src';
 
-describe("warmVimeoConnections()", () => {
-  it("should have the correct preconnections on <head /> without ad network", () => {
+describe('warmVimeoConnections()', () => {
+  it('should have the correct preconnections on <head /> without ad network', () => {
     const preconnected = false;
     const setPreconnected = vi.fn();
     const adNetwork = false;
@@ -16,10 +16,10 @@ describe("warmVimeoConnections()", () => {
       adNetwork,
     });
 
-    let urls = [
-      "https://player.vimeo.com",
-      "https://i.vimeocdn.com",
-      "https://f.vimeocdn.com",
+    const urls = [
+      'https://player.vimeo.com',
+      'https://i.vimeocdn.com',
+      'https://f.vimeocdn.com',
     ];
 
     urls.forEach((url) => {
@@ -27,7 +27,7 @@ describe("warmVimeoConnections()", () => {
     });
   });
 
-  it("should have the correct preconnections on <head /> with ad network", () => {
+  it('should have the correct preconnections on <head /> with ad network', () => {
     const preconnected = false;
     const setPreconnected = vi.fn();
     const adNetwork = true;
@@ -38,11 +38,11 @@ describe("warmVimeoConnections()", () => {
       adNetwork,
     });
 
-    let urls = [
-      "https://player.vimeo.com",
-      "https://i.vimeocdn.com",
-      "https://f.vimeocdn.com",
-      "https://fresnel.vimeocdn.com",
+    const urls = [
+      'https://player.vimeo.com',
+      'https://i.vimeocdn.com',
+      'https://f.vimeocdn.com',
+      'https://fresnel.vimeocdn.com',
     ];
 
     urls.forEach((url) => {
