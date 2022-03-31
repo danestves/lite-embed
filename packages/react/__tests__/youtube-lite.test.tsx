@@ -1,8 +1,7 @@
 // Dependencies
-import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 
 // Internals
-import { render } from '../other/test.utils';
 import { YoutubeLite } from '../src';
 import type { YouTubeLiteProps } from '../src/types';
 

@@ -1,8 +1,7 @@
 // Dependencies
-import '@testing-library/jest-dom';
+import { render } from '@testing-library/react';
 
 // Internals
-import { render } from '../other/test.utils';
 import { VimeoLite } from '../src';
 import type { VimeoLiteProps } from '../src/types';
 
