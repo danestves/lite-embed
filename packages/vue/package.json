@@ -37,6 +37,8 @@
     "clean": "rimraf dist",
     "coverage": "vitest run --coverage",
     "dev": "vite",
+    "format": "prettier --write 'src/**/*.{ts,vue}'",
+    "lint": "eslint src/**/*.{ts,vue}",
     "preview": "vite preview",
     "prepublish": "yarn build",
     "test": "vitest run"
@@ -44,14 +46,20 @@
   "dependencies": {
     "@lite-embed/utils": "1.0.0-canary.1"
   },
+  "devDependencies": {
+    "@testing-library/vue": "^6.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "eslint-plugin-vuejs-accessibility": "^1.1.1",
+    "vue": "^3.2.31"
+  },
   "peerDependencies": {
     "vue": "^3.2.31"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "@testing-library/vue": "^6.5.1",
-    "vue": "^3.2.31"
   }
 }

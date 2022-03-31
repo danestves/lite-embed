@@ -44,10 +44,10 @@
     "browser-monads-ts": "^2.0.1",
     "node-fetch": "^3.2.3"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "happy-dom": "^2.52.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

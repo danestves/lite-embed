@@ -1,8 +1,11 @@
 <script setup lang="ts">
+// Dependencies
+import { defineProps } from 'vue';
+
 defineProps({
   backgroundImage: {
     type: String,
-    default: "",
+    default: '',
     required: true,
   },
 });
@@ -15,9 +18,9 @@ defineProps({
 </template>
 
 <style scoped>
-[data-le="aspect-ratio-item"] {
+[data-le='aspect-ratio-item'] {
   background-color: #000;
-  background-image: v-bind("backgroundImage");
+  background-image: v-bind('backgroundImage');
   background-position: center;
   background-size: cover;
   contain: content;
