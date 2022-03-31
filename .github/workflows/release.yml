@@ -49,6 +49,33 @@ jobs:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: [build]
+    strategy:
+      matrix:
+        node: [14, 16]
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      # https://github.com/actions/virtual-environments/issues/1187
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
+
+      - name: Restore build
+        uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
+
+      - name: Run tests
+        run: yarn test
+
   release:
     if: ${{ needs.build.outputs.isRelease == 'true' }}
     name: Release
