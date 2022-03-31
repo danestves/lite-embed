@@ -5,15 +5,15 @@ import {
   getVimeoPlayerOptions,
   getVimeoPosterUrl,
   warmVimeoConnections,
-} from "@lite-embed/utils";
-import { onMounted, ref } from "vue";
-import type * as Vimeo from "vimeo__player";
-import type { PropType } from "vue";
+} from '@lite-embed/utils';
+import { defineProps, onMounted, ref } from 'vue';
+import type * as Vimeo from 'vimeo__player';
+import type { PropType } from 'vue';
 
 // Internals
-import { AspectRatio, AspectRatioItem } from "../aspect-ratio";
-import PlayIcon from "../icons/play-icon.vue";
-import type { VimeoPosterQuality } from "@/types";
+import { AspectRatio, AspectRatioItem } from '../aspect-ratio';
+import PlayIcon from '../icons/play-icon.vue';
+import type { VimeoPosterQuality } from '@/types';
 
 let props = defineProps({
   urlOrId: {
@@ -38,25 +38,25 @@ let props = defineProps({
     required: false,
   },
   playerParameters: {
-    type: Object as PropType<Omit<Vimeo.Options, "id" | "url">>,
+    type: Object as PropType<Omit<Vimeo.Options, 'id' | 'url'>>,
     default: () => ({}),
     required: false,
   },
   poster: {
     type: String as PropType<VimeoPosterQuality>,
-    default: "640x480",
+    default: '640x480',
     required: false,
   },
   title: {
     type: String,
-    default: "Vue Vimeo Lite",
+    default: 'Vue Vimeo Lite',
     required: false,
   },
 });
 
 let preconnected = ref(false);
 let iframe = ref(false);
-let posterUrl = ref("");
+let posterUrl = ref('');
 
 let videoId = decodeURIComponent(getVimeoId(props.urlOrId));
 let vimeoUrl = `https://player.vimeo.com/video/${videoId}?h=${Math.random()}`;
@@ -123,13 +123,13 @@ onMounted(() => {
 </template>
 
 <style scoped>
-[data-le="iframe"] {
+[data-le='iframe'] {
   border: 0;
   height: 100%;
   width: 100%;
 }
 
-[data-le="vimeo-play-button"] {
+[data-le='vimeo-play-button'] {
   appearance: none;
   background-color: rgba(30, 30, 30, 0.9);
   border: 0;
@@ -149,11 +149,11 @@ onMounted(() => {
   width: 65px;
 }
 
-[data-le="aspect-ratio"]:hover [data-le="vimeo-play-button"] {
+[data-le='aspect-ratio']:hover [data-le='vimeo-play-button'] {
   background-color: #00adef;
 }
 
-[data-le="vimeo-play-icon"] {
+[data-le='vimeo-play-icon'] {
   box-sizing: border-box;
   height: 20px;
   width: 20px;

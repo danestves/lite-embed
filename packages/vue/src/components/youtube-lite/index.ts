@@ -1,1 +1,1 @@
-export { default as YoutubeLite } from "./youtube-lite.vue";
+export { default as YoutubeLite } from './youtube-lite.vue';

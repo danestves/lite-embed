@@ -1,1 +1,1 @@
-export { default as VimeoLite } from "./vimeo-lite.vue";
+export { default as VimeoLite } from './vimeo-lite.vue';

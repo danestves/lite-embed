@@ -4,15 +4,15 @@ import {
   getYouTubeId,
   getYoutubePlayerOptions,
   warmYoutubeConnections,
-} from "@lite-embed/utils";
-import { ref } from "vue";
-import type * as Youtube from "youtube-player/dist/types";
-import type { PropType } from "vue";
+} from '@lite-embed/utils';
+import { defineProps, ref } from 'vue';
+import type * as Youtube from 'youtube-player/dist/types';
+import type { PropType } from 'vue';
 
 // Internals
-import { AspectRatio, AspectRatioItem } from "../aspect-ratio";
-import YoutubeIcon from "../icons/youtube-icon.vue";
-import type { PosterQuality } from "@/types";
+import { AspectRatio, AspectRatioItem } from '../aspect-ratio';
+import YoutubeIcon from '../icons/youtube-icon.vue';
+import type { PosterQuality } from '@/types';
 
 let props = defineProps({
   urlOrId: {
@@ -28,7 +28,7 @@ let props = defineProps({
     type: [Number, String],
     default: 16 / 9,
     validator(value: number | string) {
-      if (typeof value === "number") {
+      if (typeof value === 'number') {
         return !isNaN(value);
       }
 
@@ -46,7 +46,7 @@ let props = defineProps({
     required: false,
   },
   playerParameters: {
-    type: Object as PropType<Youtube.Options["playerVars"]>,
+    type: Object as PropType<Youtube.Options['playerVars']>,
     default: () => ({}),
     required: false,
   },
@@ -57,12 +57,12 @@ let props = defineProps({
   },
   poster: {
     type: String as PropType<PosterQuality>,
-    default: "hqdefault",
+    default: 'hqdefault',
     required: false,
   },
   title: {
     type: String,
-    default: "Vue YouTube Lite",
+    default: 'Vue YouTube Lite',
     required: false,
   },
 });
@@ -75,8 +75,8 @@ let posterUrl = props.customThumbnail
   ? props.customThumbnail
   : `https://i.ytimg.com/vi/${videoId}/${props.poster}.jpg`;
 let youtubeUrl = props.noCookie
-  ? "https://www.youtube-nocookie.com"
-  : "https://www.youtube.com";
+  ? 'https://www.youtube-nocookie.com'
+  : 'https://www.youtube.com';
 let youtubeVideoUrl = !props.playlist
   ? `${youtubeUrl}/embed/${videoId}`
   : `${youtubeUrl}/embed/videoseries`;
@@ -132,9 +132,9 @@ const addIframe = () => {
 </template>
 
 <style scoped>
-[data-le="aspect-ratio-item"]::before {
-  content: "";
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==");
+[data-le='aspect-ratio-item']::before {
+  content: '';
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==');
   background-repeat: repeat-x;
   background-position: top;
   box-sizing: content-box;
@@ -149,7 +149,7 @@ const addIframe = () => {
   z-index: 25;
 }
 
-[data-le="iframe"] {
+[data-le='iframe'] {
   border: 0;
   height: 100%;
   width: 100%;
@@ -179,7 +179,7 @@ const addIframe = () => {
   width: 68px;
 }
 
-[data-le="aspect-ratio"]:hover .le-yt-icon {
+[data-le='aspect-ratio']:hover .le-yt-icon {
   color: #f00;
   opacity: 1;
 }
