@@ -1,11 +1,11 @@
 // Dependencies
-import * as React from "react";
+import * as React from 'react';
 import {
   getVimeoId,
   getVimeoPlayerOptions,
   getVimeoPosterUrl,
   warmVimeoConnections,
-} from "@lite-embed/utils";
+} from '@lite-embed/utils';
 
 // Internals
 import {
@@ -13,8 +13,8 @@ import {
   StyledButton,
   StyledIframe,
   StyledVimeoIcon,
-} from "./vimeo-lite.styles";
-import type { VimeoLiteProps } from "@/types";
+} from './vimeo-lite.styles';
+import type { VimeoLiteProps } from '@/types';
 
 function RenderVimeoLite(
   {
@@ -25,18 +25,18 @@ function RenderVimeoLite(
     customThumbnail,
     iframeProps,
     playerParameters,
-    poster = "480x360",
+    poster = '480x360',
     title,
     ...props
   }: VimeoLiteProps,
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
-  let [preconnected, setPreconnected] = React.useState(false);
-  let [iframe, setIframe] = React.useState(false);
-  let [posterUrl, setPosterUrl] = React.useState("");
+  const [preconnected, setPreconnected] = React.useState(false);
+  const [iframe, setIframe] = React.useState(false);
+  const [posterUrl, setPosterUrl] = React.useState('');
 
-  let videoId = encodeURIComponent(getVimeoId(urlOrId));
-  let iframeSrc = `https://player.vimeo.com/video/${videoId}?h=${Math.random()}`;
+  const videoId = encodeURIComponent(getVimeoId(urlOrId));
+  const iframeSrc = `https://player.vimeo.com/video/${videoId}?h=${Math.random()}`;
 
   const warmConnections = () => {
     return warmVimeoConnections({
@@ -66,34 +66,34 @@ function RenderVimeoLite(
         backgroundImage: `url(${posterUrl})`,
         ...css,
       }}
-      onPointerOver={warmConnections}
-      onClick={addIframe}
-      data-title={title}
-      ref={ref}
-      ratio={aspectRatio}
       data-testid="vimeo-lite-aspect-ratio"
+      data-title={title}
+      onClick={addIframe}
+      onPointerOver={warmConnections}
+      ratio={aspectRatio}
+      ref={ref}
       {...props}
     >
       {iframe ? (
         <StyledIframe
-          width={560}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          data-testid="vimeo-lite-iframe"
           height={315}
-          title={title}
           src={getVimeoPlayerOptions({
             url: iframeSrc,
             adNetwork,
             ...playerParameters,
           })}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          data-testid="vimeo-lite-iframe"
+          title={title}
+          width={560}
           {...iframeProps}
         ></StyledIframe>
       ) : (
         <StyledButton
-          type="button"
           aria-label="Play"
           data-testid="vimeo-lite-button"
+          type="button"
         >
           <StyledVimeoIcon />
         </StyledButton>

@@ -39,6 +39,8 @@
     "clean": "rimraf dist",
     "coverage": "vitest run --coverage",
     "dev": "vite",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "eslint src/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
     "prepublish": "yarn build",
     "test": "vitest run"
@@ -50,6 +52,11 @@
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
     "node-fetch": "^3.2.3"
   },
   "peerDependencies": {

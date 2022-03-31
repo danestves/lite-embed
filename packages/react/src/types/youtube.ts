@@ -1,24 +1,24 @@
 // Dependencies
-import type * as Stitches from "@stitches/react";
-import type * as React from "react";
-import type * as Youtube from "youtube-player/dist/types";
+import type * as Stitches from '@stitches/react';
+import type * as React from 'react';
+import type * as Youtube from 'youtube-player/dist/types';
 
 // Internals
-import type { IframeProps } from ".";
+import type { IframeProps } from '.';
 
 export type YoutubePosterQuality =
-  | "maxresdefault"
-  | "0"
-  | "1"
-  | "2"
-  | "3"
-  | "default"
-  | "hqdefault"
-  | "mqdefault"
-  | "sddefault";
+  | 'maxresdefault'
+  | '0'
+  | '1'
+  | '2'
+  | '3'
+  | 'default'
+  | 'hqdefault'
+  | 'mqdefault'
+  | 'sddefault';
 
 export interface YouTubeLiteProps
-  extends React.ComponentPropsWithoutRef<"div"> {
+  extends React.ComponentPropsWithoutRef<'div'> {
   /**
    * This can be either an url to a video or a video ID.
    */
@@ -65,7 +65,7 @@ export interface YouTubeLiteProps
    * List of available parameters:
    * https://developers.google.com/youtube/player_parameters#Parameters
    */
-  playerParameters?: Youtube.Options["playerVars"];
+  playerParameters?: Youtube.Options['playerVars'];
   /**
    * If the video URL contains a playlist or not
    *

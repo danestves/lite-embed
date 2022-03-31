@@ -1,5 +1,5 @@
 // Dependencies
-import { render } from "@testing-library/react";
+import { render } from '@testing-library/react';
 
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
@@ -8,5 +8,5 @@ const customRender = (ui: React.ReactElement, options = {}) =>
     ...options,
   });
 
-export * from "@testing-library/react";
+export * from '@testing-library/react';
 export { customRender as render };
