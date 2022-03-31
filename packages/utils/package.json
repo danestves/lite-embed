@@ -36,6 +36,8 @@
     "clean": "rimraf dist",
     "coverage": "vitest run --coverage",
     "dev": "vite",
+    "format": "prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
+    "lint": "eslint src/**/*.ts __tests__/**/*.ts",
     "preview": "vite preview",
     "prepublish": "yarn build",
     "test": "vitest run"

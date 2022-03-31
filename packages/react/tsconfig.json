@@ -22,7 +22,7 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "__test__"],
+  "include": ["src", "__tests__"],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

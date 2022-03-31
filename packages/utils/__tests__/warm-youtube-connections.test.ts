@@ -1,11 +1,11 @@
 // Dependencies
-import { vi } from "vitest";
+import { vi } from 'vitest';
 
 // Internals
-import { warmYoutubeConnections } from "../src";
+import { warmYoutubeConnections } from '../src';
 
-describe("warmYoutubeConnections()", () => {
-  it("should have the correct preconnections on <head /> without ad network", () => {
+describe('warmYoutubeConnections()', () => {
+  it('should have the correct preconnections on <head /> without ad network', () => {
     const preconnected = false;
     const setPreconnected = vi.fn();
     const adNetwork = false;
@@ -16,14 +16,14 @@ describe("warmYoutubeConnections()", () => {
       adNetwork,
     });
 
-    let urls = ["https://www.youtube-nocookie.com", "https://www.google.com"];
+    const urls = ['https://www.youtube-nocookie.com', 'https://www.google.com'];
 
     urls.forEach((url) => {
       expect(document.head.querySelector(`link[href="${url}"]`)).toBeTruthy();
     });
   });
 
-  it("should have the correct preconnections on <head /> with ad network", () => {
+  it('should have the correct preconnections on <head /> with ad network', () => {
     const preconnected = false;
     const setPreconnected = vi.fn();
     const adNetwork = true;
@@ -34,11 +34,11 @@ describe("warmYoutubeConnections()", () => {
       adNetwork,
     });
 
-    let urls = [
-      "https://www.youtube-nocookie.com",
-      "https://www.google.com",
-      "https://googleads.g.doubleclick.net",
-      "https://static.doubleclick.net",
+    const urls = [
+      'https://www.youtube-nocookie.com',
+      'https://www.google.com',
+      'https://googleads.g.doubleclick.net',
+      'https://static.doubleclick.net',
     ];
 
     urls.forEach((url) => {

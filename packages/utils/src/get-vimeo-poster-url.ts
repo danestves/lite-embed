@@ -1,8 +1,8 @@
 // Dependencies
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 // Internals
-import canUseWebP from "./can-use-webp";
+import canUseWebP from './can-use-webp';
 
 type GetVimeoPosterUrlProps = {
   videoId: string;
@@ -15,7 +15,7 @@ async function getVimeoPosterUrl({
   customThumbnail,
   poster,
 }: GetVimeoPosterUrlProps) {
-  if (typeof customThumbnail === "string") {
+  if (typeof customThumbnail === 'string') {
     return customThumbnail;
   }
 
@@ -23,12 +23,12 @@ async function getVimeoPosterUrl({
     `https://vimeo.com/api/oembed.json?url=https%3A//vimeo.com/${videoId}`
   ).then((res: any) => res.json());
 
-  let thumbnailUrl = result.thumbnail_url || "";
+  let thumbnailUrl = result.thumbnail_url || '';
 
   // Replace the current size with the poster variable
   // i.e https://i.vimeocdn.com/video/554912674-5b4fc6c5c9041034676a60ecf1cc987c8a79e35ddb4352782efaa7f1cf96f107-d_295x166
   return `${thumbnailUrl.replace(/\d+x\d+/, poster)}.${
-    canUseWebP() ? "webp" : "jpg"
+    canUseWebP() ? 'webp' : 'jpg'
   }`;
 }
 

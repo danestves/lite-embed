@@ -1,7 +1,7 @@
 // Dependencies
-import { Options } from "vimeo__player";
+import { Options } from 'vimeo__player';
 
-interface VimeoOptions extends Omit<Options, "id" | "url"> {
+interface VimeoOptions extends Omit<Options, 'id' | 'url'> {
   adNetwork?: boolean;
   url: string;
 }

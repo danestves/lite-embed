@@ -1,5 +1,5 @@
 // Dependencies
-import { document } from "browser-monads-ts";
+import { document } from 'browser-monads-ts';
 
 function addPrefetch(rel: string, href: string, as?: string) {
   let element = document.querySelector(`link[rel="${rel}"][href="${href}"]`);
@@ -7,13 +7,13 @@ function addPrefetch(rel: string, href: string, as?: string) {
     return;
   }
 
-  let linkEl = document.createElement("link");
+  let linkEl = document.createElement('link');
 
-  linkEl.setAttribute("rel", rel);
-  linkEl.setAttribute("href", href);
+  linkEl.setAttribute('rel', rel);
+  linkEl.setAttribute('href', href);
 
   if (as) {
-    linkEl.setAttribute("as", as);
+    linkEl.setAttribute('as', as);
   }
 
   document.head.appendChild(linkEl);
