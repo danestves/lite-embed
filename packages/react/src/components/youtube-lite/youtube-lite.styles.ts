@@ -42,6 +42,7 @@ const StyledButton = styled('button', {
   margin: 0,
   outline: 'none',
   padding: 0,
+  position: 'absolute',
   top: '50%',
   transform: 'translate3d(-50%, -50%, 0)',
   width: 68,
