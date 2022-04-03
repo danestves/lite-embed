@@ -1,7 +1,7 @@
 // Dependencies
-import endent from "endent";
+import endent from 'endent';
 
-export default {
+const config = {
   docsRepositoryBase: endent`
     https://github.com/danestves/lite-embed/blob/main/website/src/pages
   `,
@@ -11,18 +11,20 @@ export default {
   footerText: `MIT ${new Date().getFullYear()} © Daniel Esteves.`,
   i18n: [
     {
-      locale: "en",
-      text: "English",
+      locale: 'en',
+      text: 'English',
     },
     {
-      locale: "es",
-      text: "Español",
+      locale: 'es',
+      text: 'Español',
     },
   ],
   nextLinks: true,
   prevLinks: true,
-  projectLink: "https://github.com/danestves/lite-embed",
+  projectLink: 'https://github.com/danestves/lite-embed',
   search: true,
-  titleSuffix: " - lite-embed",
+  titleSuffix: ' - lite-embed',
   unstable_flexsearch: true,
 };
+
+export default config;
