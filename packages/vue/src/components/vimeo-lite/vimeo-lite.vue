@@ -156,6 +156,7 @@ onMounted(() => {
 
 [data-le='vimeo-play-icon'] {
   box-sizing: border-box;
+  display: inline-flex;
   height: 20px;
   width: 20px;
 }
