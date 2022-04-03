@@ -43,6 +43,7 @@ const StyledButton = styled('button', {
 
 const StyledVimeoIcon = styled(PlayIcon, {
   boxSizing: 'border-box',
+  display: 'inline-flex',
   height: 20,
   width: 20,
 });
