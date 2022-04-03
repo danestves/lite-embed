@@ -46,7 +46,7 @@
     "browser-monads-ts": "^2.0.1"
   },
   "devDependencies": {
-    "happy-dom": "^2.52.0"
+    "happy-dom": "^2.55.0"
   },
   "publishConfig": {
     "access": "public"
