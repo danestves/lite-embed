@@ -1,5 +1,6 @@
 // Dependencies
 import { render, waitFor } from '@testing-library/vue';
+import 'isomorphic-fetch';
 
 // Internals
 import { YoutubeLite } from '../src';
