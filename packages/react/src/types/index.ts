@@ -1,4 +1,5 @@
 // Dependencies
+import type * as React from 'react';
 import type * as Stitches from '@stitches/react';
 
 export interface IframeProps extends React.ComponentPropsWithoutRef<'iframe'> {

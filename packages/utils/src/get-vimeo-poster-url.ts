@@ -1,6 +1,3 @@
-// Dependencies
-import fetch from 'node-fetch';
-
 // Internals
 import canUseWebP from './can-use-webp';
 

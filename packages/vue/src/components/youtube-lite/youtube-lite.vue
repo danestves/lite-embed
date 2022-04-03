@@ -5,7 +5,7 @@ import {
   getYoutubePlayerOptions,
   warmYoutubeConnections,
 } from '@lite-embed/utils';
-import { defineProps, ref } from 'vue';
+import { ref } from 'vue';
 import type * as Youtube from 'youtube-player/dist/types';
 import type { PropType } from 'vue';
 
@@ -38,6 +38,7 @@ let props = defineProps({
   },
   customThumbnail: {
     type: String,
+    default: '',
     required: false,
   },
   noCookie: {
@@ -107,9 +108,9 @@ const addIframe = () => {
 <template>
   <aspect-ratio
     :aspect-ratio="aspectRatio"
-    v-on:click="addIframe"
-    v-on:pointerover="warmConnections"
     data-testid
+    @click="addIframe"
+    @pointerover="warmConnections"
   >
     <aspect-ratio-item :background-image="`url(${posterUrl})`">
       <iframe

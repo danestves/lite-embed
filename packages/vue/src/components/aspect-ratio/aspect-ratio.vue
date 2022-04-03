@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Dependencies
-import { defineProps } from 'vue';
-
 defineProps({
   aspectRatio: {
     type: [Number, String],
