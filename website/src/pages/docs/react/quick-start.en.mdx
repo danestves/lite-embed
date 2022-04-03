@@ -1,0 +1,45 @@
+import { VimeoLite, YoutubeLite } from '@lite-embed/react';
+import Bleed from 'nextra-theme-docs/bleed';
+
+# Quick Start
+
+This examples illustrate how to use the library with YouTube or Vimeo.
+
+```tsx
+// Dependencies
+import { Vimeo, YoutubeLite } from '@lite-embed/react';
+
+export default function App() {
+  return (
+    <>
+      <YoutubeLite
+        urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        // or
+        // urlOrId="dQw4w9WgXcQ"
+      />
+
+      <VimeoLite
+        urlOrId="https://vimeo.com/476064230"
+        // or
+        // urlOrId="476064230"
+      />
+    </>
+  );
+}
+```
+
+Will output this:
+
+### YouTube
+
+<YoutubeLite
+  className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-white/10"
+  urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+/>
+
+### Vimeo
+
+<VimeoLite
+  className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-white/10"
+  urlOrId="https://vimeo.com/476064230"
+/>

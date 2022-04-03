@@ -1,10 +1,10 @@
 // Dependencies
-import 'nextra-theme-docs/style.css';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
 // Internals
-import '../styles/main.css';
+import '../styles/tailwind.css';
+import '../styles/vendor.css';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
