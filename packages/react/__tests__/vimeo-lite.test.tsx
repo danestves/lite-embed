@@ -1,10 +1,15 @@
 // Dependencies
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import 'isomorphic-fetch';
 
 // Internals
 import { VimeoLite } from '../src';
 import type { VimeoLiteProps } from '../src/types';
+
+const testIds = {
+  button: 'le-vi-button',
+  iframe: 'le-vi-iframe',
+};
 
 const props: VimeoLiteProps = {
   urlOrId: 'https://vimeo.com/148751763',
@@ -16,25 +21,29 @@ describe('VimeoLite', async () => {
   });
 
   describe('Iframe', () => {
-    it('should render after button click', () => {
+    it('should render after button click', async () => {
       const { getByTestId } = render(<VimeoLite {...props} />);
 
-      const button = getByTestId('vimeo-lite-button') as HTMLButtonElement;
+      const button = getByTestId(testIds.button) as HTMLButtonElement;
       button.click();
 
-      const iframe = getByTestId('vimeo-lite-iframe') as HTMLIFrameElement;
-      expect(iframe).toBeInTheDocument();
+      await waitFor(() => {
+        const iframe = getByTestId(testIds.iframe) as HTMLIFrameElement;
+        expect(iframe).toBeInTheDocument();
+      });
     });
 
-    it('should render with a custom title', () => {
+    it('should render with a custom title', async () => {
       const title = 'Rick Astley - Never Gonna Give You Up';
       const { getByTestId } = render(<VimeoLite title={title} {...props} />);
 
-      const button = getByTestId('vimeo-lite-button') as HTMLButtonElement;
+      const button = getByTestId(testIds.button) as HTMLButtonElement;
       button.click();
 
-      const iframe = getByTestId('vimeo-lite-iframe') as HTMLIFrameElement;
-      expect(iframe).toHaveAttribute('title', title);
+      await waitFor(() => {
+        const iframe = getByTestId(testIds.iframe) as HTMLIFrameElement;
+        expect(iframe).toHaveAttribute('title', title);
+      });
     });
   });
 });

@@ -78,7 +78,7 @@ function RenderVimeoLite(
         <StyledIframe
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          data-testid="vimeo-lite-iframe"
+          data-testid="le-vi-iframe"
           height={315}
           src={getVimeoPlayerOptions({
             url: iframeSrc,
@@ -92,7 +92,7 @@ function RenderVimeoLite(
       ) : (
         <StyledButton
           aria-label="Play"
-          data-testid="vimeo-lite-button"
+          data-testid="le-vi-button"
           type="button"
         >
           <StyledVimeoIcon />
