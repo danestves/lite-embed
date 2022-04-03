@@ -16,7 +16,7 @@ const options = {
     return [
       {
         source: '/docs',
-        destination: '/docs/getting-started',
+        destination: '/docs/getting-started/overview',
         statusCode: 301,
       },
     ];
