@@ -1,5 +1,6 @@
 // Dependencies
 import { render } from '@testing-library/react';
+import 'isomorphic-fetch';
 
 // Internals
 import { VimeoLite } from '../src';

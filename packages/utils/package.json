@@ -43,8 +43,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "browser-monads-ts": "^2.0.1",
-    "node-fetch": "^3.2.3"
+    "browser-monads-ts": "^2.0.1"
   },
   "devDependencies": {
     "happy-dom": "^2.52.0"

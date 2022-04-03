@@ -6,7 +6,7 @@ import {
   getVimeoPosterUrl,
   warmVimeoConnections,
 } from '@lite-embed/utils';
-import { defineProps, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import type * as Vimeo from 'vimeo__player';
 import type { PropType } from 'vue';
 
@@ -35,6 +35,7 @@ let props = defineProps({
   },
   customThumbnail: {
     type: String,
+    default: '',
     required: false,
   },
   playerParameters: {
@@ -96,8 +97,8 @@ onMounted(() => {
 <template>
   <aspect-ratio
     :aspect-ratio="aspectRatio"
-    v-on:pointerover="warmConnections"
-    v-on:click="addIframe"
+    @pointerover="warmConnections"
+    @click="addIframe"
   >
     <aspect-ratio-item :background-image="`url(${posterUrl})`">
       <iframe
