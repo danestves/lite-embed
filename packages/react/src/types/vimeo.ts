@@ -11,7 +11,8 @@ export type VimeoPosterQuality =
   | '480x360'
   | '320x180'
   | '640x480'
-  | '1280x720';
+  | '1280x720'
+  | string;
 
 export interface VimeoLiteProps extends React.ComponentPropsWithoutRef<'div'> {
   /**
@@ -19,7 +20,7 @@ export interface VimeoLiteProps extends React.ComponentPropsWithoutRef<'div'> {
    */
   urlOrId: string;
   /**
-   * Preconnect or not doubleclick ads, this is the adnetwork from Google.
+   * Preconnect or not ads, this is the adnetwork from Vimeo.
    *
    * @default false
    */
@@ -50,9 +51,7 @@ export interface VimeoLiteProps extends React.ComponentPropsWithoutRef<'div'> {
    */
   playerParameters?: Omit<Vimeo.Options, 'id' | 'url'>;
   /**
-   * The different quality to show the poster
-   * see: https://developers.google.com/youtube/v3/docs/thumbnails
-   * for more information
+   * The different dimensions of the poster image.
    *
    * @default "480x360"
    */
