@@ -9,13 +9,13 @@ defineProps({
 </script>
 
 <template>
-  <div data-le="aspect-ratio-item">
+  <div class="le-aspect-ratio-item">
     <slot></slot>
   </div>
 </template>
 
 <style scoped>
-[data-le='aspect-ratio-item'] {
+.le-aspect-ratio-item {
   background-color: #000;
   background-image: v-bind('backgroundImage');
   background-position: center;
