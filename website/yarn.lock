@@ -72,19 +72,19 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@lite-embed/react@^1.0.0-canary.4":
-  version "1.0.0-canary.4"
-  resolved "https://registry.yarnpkg.com/@lite-embed/react/-/react-1.0.0-canary.4.tgz#79f7cfd40f52046b53891edfdc45f42ad9326337"
-  integrity sha512-IYCter2Qu14nnYz0PSgA3tIJAp0i2ygk5F1WVgbmae4AHZ3N3N1rGOJtViBiil8afWFui2msbkzWkuMPSlEtyQ==
+"@lite-embed/react@^1.0.0-canary.5":
+  version "1.0.0-canary.5"
+  resolved "https://registry.yarnpkg.com/@lite-embed/react/-/react-1.0.0-canary.5.tgz#d86d2ea75974894b2581fe78524a60ed9f36d57f"
+  integrity sha512-vW0QjyuYfWbh22Y9x5gOXd7pgC5VfOWUgW0g0G8n559P35f1AVcZOg/l/T5NHeEx5R1o77TvDjd0Ur0GlOxPhg==
   dependencies:
-    "@lite-embed/utils" "1.0.0-canary.4"
+    "@lite-embed/utils" "1.0.0-canary.5"
     "@radix-ui/react-aspect-ratio" "^0.1.4"
     "@stitches/react" "^1.2.7"
 
-"@lite-embed/utils@1.0.0-canary.4":
-  version "1.0.0-canary.4"
-  resolved "https://registry.yarnpkg.com/@lite-embed/utils/-/utils-1.0.0-canary.4.tgz#7d679b0d40d029f5df4e48b2b89ae1e656e3a5f4"
-  integrity sha512-DStSU3fczsLBQH3YRGnuI9FceGoWh5BjLwZe/w/NWUBCKoh/hs8lX1rTb/WDHsTepOwNILpxeK8V3I8QSqNqzQ==
+"@lite-embed/utils@1.0.0-canary.5":
+  version "1.0.0-canary.5"
+  resolved "https://registry.yarnpkg.com/@lite-embed/utils/-/utils-1.0.0-canary.5.tgz#bc2c39abe56cdaaac9524126dae739a745460af3"
+  integrity sha512-U3BF/vEQmXtkQhoOX7ip5lYO/Y5AnE5EjFjCckSasRtg+jfSfmfnQ1IqypAO8sc26w3m77L68+oi3Sdg3D8q3g==
   dependencies:
     browser-monads-ts "^2.0.1"
 
