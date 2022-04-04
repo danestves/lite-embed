@@ -1,0 +1,30 @@
+import Callout from 'nextra-theme-docs/callout';
+
+# Installation
+
+Puedes instalar `@lite-embed/vue` con [NPM](https://www.npmjs.com/@lite-embed/vue), [yarn](https://yarnpkg.com/package/@lite-embed/vue), cualquier gestor de paquetes, o un `<script />` a través de [unpkg.com](https://unpkg.com/@lite-embed/vue).
+
+## NPM
+
+```bash
+npm install @lite-embed/vue
+# or
+yarn add @lite-embed/vue
+```
+
+<Callout emoji="💡">
+  Por el momento, sólo admitimos Vue 3 y versiones superiores.
+</Callout>
+
+## CDN
+
+También tenemos una compilación global ("UMD") alojada en la CDN de unpkg.com si no utilizas un gestor de paquetes. Simplemente, en la parte inferior de tu archivo HTML, añade la siguiente etiqueta `<script>`:
+
+```html
+<script src="https://unpkg.com/@lite-embed/vue/dist/lite-embed-vue.umd.js"></script>
+```
+
+<Callout emoji="💡">
+  Esta instalación/uso requiere la presencia del [Vue CDN script
+  bundle](https://unpkg.com/vue@3) en la página.
+</Callout>

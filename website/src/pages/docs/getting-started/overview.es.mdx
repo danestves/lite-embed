@@ -1,25 +1,25 @@
 # Resumen
 
-`lite-embed` is a simple, fast, and **powerful embedding library** for videos on YouTube and Vimeo for JavaScript.
+`lite-embed` es una sencilla, rápida y **potente librería de incrustación** de vídeos en YouTube y Vimeo para JavaScript.
 
-## Motivation
+## Motivación
 
-Often when you want to embed a video on a page, you want to be have a fast and lightweight way to do it. You don't want to load all those scripts and stylesheets, and you don't want to have to wait for the video to load.
+A menudo, cuando quieres incrustar un vídeo en una página, quieres tener una forma rápida y ligera de hacerlo. No quieres cargar todos esos scripts y hojas de estilo, y no quieres tener que esperar a que el vídeo se cargue.
 
-**This always comes with a trade-off**: you want to be able to embed videos without having to wait for the video to load, but you also want to be able to embed videos that are already loaded.
+**Esto siempre conlleva una contrapartida**: quieres poder incrustar vídeos sin tener que esperar a que se carguen, pero también te gustaría tener una forma rápida de incrustar vídeos.
 
-While there are many ways to do this, there are also many ways to do this wrong.
+Aunque hay muchas maneras de hacer esto, también hay muchas maneras de hacerlo mal.
 
-This is how a simple HTML with an iframe looks like
+Así es como se ve un simple HTML con un `<iframe>`:
 
-[![webpagetest results](../../../../public/html-iframe.png)](https://www.webpagetest.org/result/220403_AiDc9P_2Y9/)
+[![resultados de webpagetest](../../../../public/html-iframe.png)](https://www.webpagetest.org/result/220403_AiDc9P_2Y9/)
 
-It's not very fast, and it's not very lightweight.
+No es muy rápido, y no es muy ligero.
 
-Once you start investigating why you're having this problem, you'll find that every `iframe` load a lot of scripts and stylesheets. Even if you have not put `autoplay` or `loop` in the `iframe`, you still have to load all those scripts and stylesheets for a thumnail to be displayed.
+Cuando empieces a investigar por qué tienes este problema, descubrirás que cada `<iframe>` carga un montón de scripts y hojas de estilo. Incluso si no has puesto `autoplay` o `loop` en el `<iframe>`, tienes que cargar todos esos scripts y hojas de estilo para que se muestre una miniatura.
 
-`lite-embed` solves this problem by loading the video with a "fake" element that has the same dimensions as the video. This way, you don't have to load all those scripts and stylesheets, and you don't have to wait for the video to load.
+`lite-embed` resuelve este problema cargando el vídeo con un elemento "falso" que tiene las mismas dimensiones que el vídeo. De esta manera, no tienes que cargar todos esos scripts y hojas de estilo, y no tienes que esperar a que el vídeo se cargue.
 
-Once you click the `iframe` to load the video, the video will be loaded and displayed with the scripts needed to play the video.
+Una vez que hagas clic en el `<iframe>` para cargar el vídeo, éste se cargará y se mostrará con los scripts necesarios para reproducir el vídeo.
 
-In addition to this when you hover the element we put some preload links into the `<head />` to allow the browser to preload the scripts domains more efficiently.
+Además, cuando pasas el ratón por el elemento, ponemos algunos enlaces de precarga en el `<head>` para que el navegador pueda precargar los dominios de los scripts de forma más eficiente.

@@ -6,27 +6,25 @@ import { AspectRatioShowcase } from '../../../components/aspect-ratio-showcase';
 
 Estos ejemplos ilustran cómo utilizar la biblioteca con YouTube o Vimeo.
 
-```tsx
+```vue
+<script setup lang="ts">
 // Dependencies
-import { Vimeo, YoutubeLite } from '@lite-embed/react';
+import { VimeoLite, YoutubeLite } from '@lite-embed/vue';
+</script>
 
-export default function App() {
-  return (
-    <>
-      <YoutubeLite
-        urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        // o
-        // urlOrId="dQw4w9WgXcQ"
-      />
+<template>
+  <div>
+    <vimeo-lite url-or-id="https://vimeo.com/476064230"></vimeo-lite>
+    <!-- or -->
+    <vimeo-lite url-or-id="476064230"></vimeo-lite>
 
-      <VimeoLite
-        urlOrId="https://vimeo.com/476064230"
-        // o
-        // urlOrId="476064230"
-      />
-    </>
-  );
-}
+    <youtube-lite
+      url-or-id="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    ></youtube-lite>
+    <!-- or -->
+    <youtube-lite url-or-id="dQw4w9WgXcQ"></youtube-lite>
+  </div>
+</template>
 ```
 
 Saldrá esto:
