@@ -1,5 +1,7 @@
+import * as React from 'react';
 import { VimeoLite, YoutubeLite } from '@lite-embed/react';
-import Bleed from 'nextra-theme-docs/bleed';
+
+import { AspectRatioShowcase } from '../../../components/aspect-ratio-showcase';
 
 # Quick Start
 
@@ -32,16 +34,26 @@ Will output this:
 
 ### YouTube
 
-<YoutubeLite
-  className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-white/10"
-  urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  poster="maxresdefault"
-/>
+<AspectRatioShowcase>
+  {({ aspectRatio }) => (
+    <YoutubeLite
+      aspectRatio={aspectRatio}
+      className="mt-6 rounded-lg shadow-lg !shadow-[#29abe2]/20"
+      urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      poster="maxresdefault"
+    />
+  )}
+</AspectRatioShowcase>
 
 ### Vimeo
 
-<VimeoLite
-  className="mt-6 rounded-lg overflow-hidden shadow-2xl shadow-white/10"
-  urlOrId="https://vimeo.com/476064230"
-  poster="1280x720"
-/>
+<AspectRatioShowcase>
+  {({ aspectRatio }) => (
+    <VimeoLite
+      aspectRatio={aspectRatio}
+      className="mt-6 rounded-lg shadow-lg !shadow-[#29abe2]/20"
+      urlOrId="https://vimeo.com/476064230"
+      poster="1280x720"
+    />
+  )}
+</AspectRatioShowcase>

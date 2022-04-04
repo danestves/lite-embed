@@ -1,0 +1,37 @@
+import { YoutubeLite } from '@lite-embed/react';
+
+# Advanced Styles
+
+Thanks to [`@stitches/react`](https://stitches.dev/) we are able to customize the styles of the component.
+
+```tsx
+// Dependencies
+import { YoutubeLite } from '@lite-embed/react';
+
+export default function App() {
+  return (
+    <YoutubeLite
+      css={{
+        transition: 'transform 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.1)',
+        },
+      }}
+      urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    />
+  );
+}
+```
+
+Now if you hover on the component you will see that will scale to 110%. You can use any properties of CSS that you want to customize the component.
+
+<YoutubeLite
+  className="mt-6 rounded-lg"
+  css={{
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
+  }}
+  urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+/>

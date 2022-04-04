@@ -1,14 +1,10 @@
 // Dependencies
-import Document, { Head, Html, Main, NextScript } from "next/document";
-import { SkipNavLink } from "@reach/skip-nav";
-import type { DocumentContext } from "next/document";
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { createGetInitialProps } from '@mantine/next';
+import { SkipNavLink } from '@reach/skip-nav';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
-  }
+  static getInitialProps = createGetInitialProps();
 
   render() {
     return (
