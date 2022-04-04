@@ -97,40 +97,40 @@ onMounted(() => {
 <template>
   <aspect-ratio
     :aspect-ratio="aspectRatio"
-    @pointerover="warmConnections"
     @click="addIframe"
+    @pointerover="warmConnections"
   >
     <aspect-ratio-item :background-image="`url(${posterUrl})`">
       <iframe
         v-if="iframe"
-        data-le="iframe"
-        :title="$props.title"
-        :src="iframeSrc"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        class="le-vi-iframe"
         data-testid="le-vi-iframe"
+        :src="iframeSrc"
+        :title="$props.title"
       ></iframe>
       <button
         v-else
-        type="button"
-        data-le="vimeo-play-button"
         aria-label="Play"
+        class="le-vi-play-button"
         data-testid="le-vi-button"
+        type="button"
       >
-        <play-icon data-le="vimeo-play-icon" />
+        <play-icon class="le-vi-play-icon" />
       </button>
     </aspect-ratio-item>
   </aspect-ratio>
 </template>
 
 <style scoped>
-[data-le='iframe'] {
+.le-vi-iframe {
   border: 0;
   height: 100%;
   width: 100%;
 }
 
-[data-le='vimeo-play-button'] {
+.le-vi-play-button {
   appearance: none;
   background-color: rgba(30, 30, 30, 0.9);
   border: 0;
@@ -150,11 +150,11 @@ onMounted(() => {
   width: 65px;
 }
 
-[data-le='aspect-ratio']:hover [data-le='vimeo-play-button'] {
+.le-aspect-ratio:hover .le-vi-play-button {
   background-color: #00adef;
 }
 
-[data-le='vimeo-play-icon'] {
+.le-vi-play-icon {
   box-sizing: border-box;
   display: inline-flex;
   height: 20px;
