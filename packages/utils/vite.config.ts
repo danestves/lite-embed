@@ -1,33 +1,34 @@
 /// <reference types="vitest" />
 
 // Dependencies
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
-import { resolve } from "path";
-import rollupNodePolyFill from "rollup-plugin-node-polyfills";
-import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+import { resolve } from 'path';
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // Internals
-import { dependencies } from "./package.json";
+import { dependencies } from './package.json';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src", "index.ts"),
-      formats: ["cjs", "es"],
+      entry: resolve(__dirname, 'src', 'index.ts'),
+      formats: ['es', 'umd'],
       fileName: (ext) => `lite-embed-utils.${ext}.js`,
+      name: 'LiteEmbedUtils',
     },
     rollupOptions: {
       external: [...Object.keys(dependencies)],
       plugins: [rollupNodePolyFill()],
     },
-    target: "esnext",
+    target: 'esnext',
     sourcemap: true,
   },
   optimizeDeps: {
     esbuildOptions: {
       define: {
-        global: "globalThis",
+        global: 'globalThis',
       },
       plugins: [
         NodeGlobalsPolyfillPlugin({
@@ -40,15 +41,15 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
+      '@': resolve(__dirname, 'src'),
     },
   },
   test: {
     coverage: {
-      reporter: ["text", "json", "html"],
+      reporter: ['text', 'json', 'html'],
     },
-    environment: "happy-dom",
+    environment: 'happy-dom',
     globals: true,
-    setupFiles: "./jest.setup.ts",
+    setupFiles: './jest.setup.ts',
   },
 });
