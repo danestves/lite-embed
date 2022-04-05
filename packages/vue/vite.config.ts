@@ -1,23 +1,23 @@
 /// <reference types="vitest" />
 
 // Dependencies
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
-import vue from "@vitejs/plugin-vue";
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import rollupNodePolyFill from "rollup-plugin-node-polyfills";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // Internals
-import { dependencies, peerDependencies } from "./package.json";
+import { dependencies, peerDependencies } from './package.json';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src", "index.ts"),
+      entry: resolve(__dirname, 'src', 'index.ts'),
       fileName: (ext) => `lite-embed-vue.${ext}.js`,
-      formats: ["es", "umd"],
-      name: "YoutubeLite",
+      formats: ['es', 'umd'],
+      name: 'LiteEmbedVue',
     },
     rollupOptions: {
       external: [
@@ -26,18 +26,18 @@ export default defineConfig({
       ],
       output: {
         globals: {
-          vue: "Vue",
+          vue: 'Vue',
         },
       },
       plugins: [rollupNodePolyFill()],
     },
-    target: "esnext",
+    target: 'esnext',
     sourcemap: true,
   },
   optimizeDeps: {
     esbuildOptions: {
       define: {
-        global: "globalThis",
+        global: 'globalThis',
       },
       plugins: [
         NodeGlobalsPolyfillPlugin({
@@ -50,15 +50,15 @@ export default defineConfig({
   plugins: [vue(), tsconfigPaths()],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
+      '@': resolve(__dirname, 'src'),
     },
   },
   test: {
     coverage: {
-      reporter: ["text", "json", "html"],
+      reporter: ['text', 'json', 'html'],
     },
-    environment: "jsdom",
+    environment: 'jsdom',
     globals: true,
-    setupFiles: "./jest.setup.ts",
+    setupFiles: './jest.setup.ts',
   },
 });
