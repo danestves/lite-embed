@@ -32,7 +32,14 @@ const config = {
   `,
   floatTOC: true,
   footer: true,
-  footerEditLink: `Edit this page on GitHub`,
+  footerEditLink: ({ locale }) => {
+    switch (locale) {
+      case 'es':
+        return 'Edita esta página en GitHub →';
+      default:
+        return 'Edit this page on GitHub →';
+    }
+  },
   footerText: `MIT ${new Date().getFullYear()} © Daniel Esteves.`,
   i18n: [
     {
