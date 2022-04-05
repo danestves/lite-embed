@@ -21,6 +21,16 @@ function Logo(props) {
   );
 }
 
+const EDIT_LINK_WITH_TRANSLATIONS = {
+  en: 'Edit this page on GitHub →',
+  es: 'Edita esta página en GitHub →',
+};
+
+const FEEDBACK_LINK_WITH_TRANSLATIONS = {
+  en: 'Question? Give us feedback →',
+  es: '¿Pregunta? Haznos saber tu opinión →',
+};
+
 const TITLE_WITH_TRANSLATIONS = {
   en: 'Embed videos on your website without extra work',
   es: 'Inserta videos en tu sitio sin trabajo extra',
@@ -30,15 +40,19 @@ const config = {
   docsRepositoryBase: endent`
     https://github.com/danestves/lite-embed/blob/canary/website/src/pages
   `,
+  feedbackLink: ({ locale }) => {
+    return (
+      FEEDBACK_LINK_WITH_TRANSLATIONS[locale] ||
+      FEEDBACK_LINK_WITH_TRANSLATIONS['en']
+    );
+  },
   floatTOC: true,
   footer: true,
+  feedbackLabels: 'feedback',
   footerEditLink: ({ locale }) => {
-    switch (locale) {
-      case 'es':
-        return 'Edita esta página en GitHub →';
-      default:
-        return 'Edit this page on GitHub →';
-    }
+    return (
+      EDIT_LINK_WITH_TRANSLATIONS[locale] || EDIT_LINK_WITH_TRANSLATIONS['en']
+    );
   },
   footerText: `MIT ${new Date().getFullYear()} © Daniel Esteves.`,
   i18n: [
