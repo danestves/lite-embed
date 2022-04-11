@@ -1,11 +1,5 @@
 // Dependencies
-import {
-  ColorScheme,
-  ColorSchemeProvider,
-  MantineProvider,
-} from '@mantine/core';
-import { window } from 'browser-monads-ts';
-import { useTheme } from 'next-themes';
+import * as React from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
@@ -22,20 +16,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  let { setTheme } = useTheme();
   let getLayout = Component.getLayout ?? ((page) => page);
 
-  let theme = (window.localStorage.getItem('theme') as ColorScheme) ?? 'light';
-
-  return (
-    <ColorSchemeProvider colorScheme={theme} toggleColorScheme={setTheme}>
-      <MantineProvider
-        theme={{
-          colorScheme: theme,
-        }}
-      >
-        {getLayout(<Component {...pageProps} />)}
-      </MantineProvider>
-    </ColorSchemeProvider>
-  );
+  return getLayout(<Component {...pageProps} />);
 }
