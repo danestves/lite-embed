@@ -36,6 +36,12 @@ const TITLE_WITH_TRANSLATIONS = {
   es: 'Inserta videos en tu sitio sin trabajo extra',
 };
 
+const DESCRIPTION = endent`
+  Lite Embed is an NPM package that allows you to add embedded videos to your website without a lot of extra work.
+
+  It's lightweight and easy to set up and use.
+`;
+
 const config = {
   docsRepositoryBase: endent`
     https://github.com/danestves/lite-embed/blob/canary/website/src/pages
@@ -55,6 +61,49 @@ const config = {
     );
   },
   footerText: `MIT ${new Date().getFullYear()} © Daniel Esteves.`,
+  head: ({ meta, title }) => {
+    let ogImage = meta.image ?? 'https://lite-embed.vercel.app/og.jpg';
+
+    return (
+      <>
+        <link
+          href="/apple-touch-icon.png"
+          rel="apple-touch-icon"
+          sizes="180x180"
+        />
+        <link
+          href="/favicon-32x32.png"
+          rel="icon"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          href="/favicon-16x16.png"
+          rel="icon"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link href="/favicon.ico" id="favicon" rel="icon" type="image/x-icon" />
+        <link href="/site.webmanifest" rel="manifest" />
+
+        <meta content={meta.description ?? DESCRIPTION} name="description" />
+        <meta content={meta.description ?? DESCRIPTION} name="og:description" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="@vercel" name="twitter:site" />
+        <meta content={ogImage} name="twitter:image" />
+        <meta
+          content={
+            title
+              ? title + ' – lite-embed'
+              : 'Lite Embed: Embed videos on your website without extra work'
+          }
+          name="og:title"
+        />
+        <meta content={ogImage} name="og:image" />
+        <meta content="Lite Embed" name="apple-mobile-web-app-title" />
+      </>
+    );
+  },
   i18n: [
     {
       locale: 'en',
