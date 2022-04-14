@@ -1,13 +1,11 @@
 // Dependencies
 import * as React from 'react';
-import Script from 'next/script';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
 // Internals
 import '../styles/tailwind.css';
 import '../styles/vendor.css';
-import endent from 'endent';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
