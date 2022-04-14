@@ -1,8 +1,8 @@
 {
   "name": "@lite-embed/react",
   "version": "1.0.0-canary.7",
-  "description": "> TODO: description",
-  "homepage": "https://github.com/danestves/lite-embed#readme",
+  "description": "Embed a YouTube or Vimeo video in your React app",
+  "homepage": "https://lite-embed.vercel.app/docs/react/installation",
   "bugs": {
     "url": "https://github.com/danestves/lite-embed/issues"
   },
