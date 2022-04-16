@@ -52,10 +52,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.6.0",
     "eslint-plugin-vuejs-accessibility": "^1.1.1",
-    "vue": "^3.2.32"
+    "vue": "^3.2.33"
   },
   "peerDependencies": {
-    "vue": "^3.2.32"
+    "vue": "^3.2.33"
   },
   "publishConfig": {
     "access": "public"
