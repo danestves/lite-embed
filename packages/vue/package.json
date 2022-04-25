@@ -1,0 +1,63 @@
+{
+  "name": "@lite-embed/vue",
+  "version": "1.0.0",
+  "description": "Embed a YouTube or Vimeo video in your Vue app",
+  "homepage": "https://lite-embed.vercel.app/docs/vue/installation",
+  "bugs": {
+    "url": "https://github.com/danestves/lite-embed/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danestves/lite-embed.git"
+  },
+  "license": "MIT",
+  "author": "Daniel Esteves <me+github@danestves.com>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/lite-embed-vue.es.js",
+      "require": "./dist/lite-embed-vue.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "dist/lite-embed-vue.umd.js",
+  "module": "dist/lite-embed-vue.es.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "run-p build:*",
+    "build:scripts": "vite build",
+    "build:types": "vue-tsc --emitDeclarationOnly && tsc-alias",
+    "clean": "rimraf dist",
+    "coverage": "vitest run --coverage",
+    "dev": "vite",
+    "format": "prettier --write 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
+    "lint": "eslint 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
+    "preview": "vite preview",
+    "prepublish": "yarn build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@lite-embed/utils": "1.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/vue": "^6.5.1",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "eslint-plugin-vuejs-accessibility": "^1.1.1",
+    "vue": "^3.2.33"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.33"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

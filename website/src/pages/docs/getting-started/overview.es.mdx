@@ -1,0 +1,25 @@
+# Resumen
+
+`lite-embed` es una sencilla, rápida y **potente librería de incrustación** de vídeos en YouTube y Vimeo para JavaScript.
+
+## Motivación
+
+A menudo, cuando quieres incrustar un vídeo en una página, quieres tener una forma rápida y ligera de hacerlo. No quieres cargar todos esos scripts y hojas de estilo, y no quieres tener que esperar a que el vídeo se cargue.
+
+**Esto siempre conlleva una contrapartida**: quieres poder incrustar vídeos sin tener que esperar a que se carguen, pero también te gustaría tener una forma rápida de incrustar vídeos.
+
+Aunque hay muchas maneras de hacer esto, también hay muchas maneras de hacerlo mal.
+
+Así es como se ve un simple HTML con un `<iframe>`:
+
+[![resultados de webpagetest](../../../../public/html-iframe.png)](https://www.webpagetest.org/result/220403_AiDc9P_2Y9/)
+
+No es muy rápido, y no es muy ligero.
+
+Cuando empieces a investigar por qué tienes este problema, descubrirás que cada `<iframe>` carga un montón de scripts y hojas de estilo. Incluso si no has puesto `autoplay` o `loop` en el `<iframe>`, tienes que cargar todos esos scripts y hojas de estilo para que se muestre una miniatura.
+
+`lite-embed` resuelve este problema cargando el vídeo con un elemento "falso" que tiene las mismas dimensiones que el vídeo. De esta manera, no tienes que cargar todos esos scripts y hojas de estilo, y no tienes que esperar a que el vídeo se cargue.
+
+Una vez que hagas clic en el `<iframe>` para cargar el vídeo, éste se cargará y se mostrará con los scripts necesarios para reproducir el vídeo.
+
+Además, cuando pasas el ratón por el elemento, ponemos algunos enlaces de precarga en el `<head>` para que el navegador pueda precargar los dominios de los scripts de forma más eficiente.

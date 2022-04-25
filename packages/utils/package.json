@@ -1,7 +1,7 @@
 {
   "name": "@lite-embed/utils",
-  "version": "0.2.0",
-  "description": "> TODO: description",
+  "version": "1.0.0",
+  "description": "Utility function for the components.",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
     "url": "https://github.com/danestves/lite-embed/issues"
@@ -15,12 +15,11 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/lite-embed-utils.cjs.js",
-      "import": "./dist/lite-embed-utils.es.js"
-    },
-    "./dist/style.css": "./dist/style.css"
+      "import": "./dist/lite-embed-utils.es.js",
+      "require": "./dist/lite-embed-utils.umd.js"
+    }
   },
-  "main": "dist/lite-embed-utils.cjs.js",
+  "main": "dist/lite-embed-utils.umd.js",
   "module": "dist/lite-embed-utils.es.js",
   "types": "dist/index.d.ts",
   "directories": {
@@ -30,21 +29,24 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "npm run clean",
+    "prebuild": "yarn clean",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --emitDeclarationOnly && tsc-alias",
     "clean": "rimraf dist",
+    "coverage": "vitest run --coverage",
     "dev": "vite",
+    "format": "prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
+    "lint": "eslint src/**/*.ts __tests__/**/*.ts",
     "preview": "vite preview",
-    "prepublish": "npm run build"
+    "prepublish": "yarn build",
+    "test": "vitest run"
   },
   "dependencies": {
-    "browser-monads-ts": "^1.2.5"
+    "browser-monads-ts": "^2.0.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.21",
-    "@types/youtube": "^0.0.46"
+    "happy-dom": "^2.55.0"
   },
   "publishConfig": {
     "access": "public"

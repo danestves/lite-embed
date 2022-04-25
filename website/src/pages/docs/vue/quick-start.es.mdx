@@ -1,0 +1,56 @@
+import { VimeoLite, YoutubeLite } from '@lite-embed/react';
+
+import { AspectRatioShowcase } from '../../../components/aspect-ratio-showcase';
+
+# Inicio rápido
+
+Estos ejemplos ilustran cómo utilizar la biblioteca con YouTube o Vimeo.
+
+```vue
+<script setup lang="ts">
+// Dependencies
+import { VimeoLite, YoutubeLite } from '@lite-embed/vue';
+</script>
+
+<template>
+  <div>
+    <vimeo-lite url-or-id="https://vimeo.com/476064230"></vimeo-lite>
+    <!-- or -->
+    <vimeo-lite url-or-id="476064230"></vimeo-lite>
+
+    <youtube-lite
+      url-or-id="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    ></youtube-lite>
+    <!-- or -->
+    <youtube-lite url-or-id="dQw4w9WgXcQ"></youtube-lite>
+  </div>
+</template>
+```
+
+Saldrá esto:
+
+### YouTube
+
+<AspectRatioShowcase>
+  {({ aspectRatio }) => (
+    <YoutubeLite
+      aspectRatio={aspectRatio}
+      className="mt-6 rounded-lg shadow-lg !shadow-[#29abe2]/20"
+      urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      poster="maxresdefault"
+    />
+  )}
+</AspectRatioShowcase>
+
+### Vimeo
+
+<AspectRatioShowcase>
+  {({ aspectRatio }) => (
+    <VimeoLite
+      aspectRatio={aspectRatio}
+      className="mt-6 rounded-lg shadow-lg !shadow-[#29abe2]/20"
+      urlOrId="https://vimeo.com/476064230"
+      poster="1280x720"
+    />
+  )}
+</AspectRatioShowcase>

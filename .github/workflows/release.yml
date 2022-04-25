@@ -1,4 +1,4 @@
-name: Build & Release
+name: Build, test & release
 
 on:
   push:
@@ -13,30 +13,28 @@ jobs:
     outputs:
       isRelease: ${{ steps.check-release.outputs.IS_RELEASE }}
     steps:
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 25
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Symlink packages
-        run: npm run lerna link
-
-      - name: Bootstrap dependencies
-        run: npm run lerna bootstrap
+        run: yarn install --frozen-lockfile --check-files
 
       - name: Fetch git tags
         run: node ./scripts/fetch-tags.mjs ${{ github.sha }}
+
+      - name: Check docs only change
+        run: echo ::set-output name=DOCS_CHANGE::$(node scripts/skip-docs-change.js echo 'not-docs-only-change')
+        id: docs-change
 
       - name: Check release
         id: check-release
@@ -55,6 +53,56 @@ jobs:
           path: ./*
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
 
+  lint:
+    if: ${{needs.build.outputs.docsChange != 'docs only change'}}
+    name: Lint
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Restore build
+        uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
+
+      - name: Lint
+        run: yarn lint
+
+  test:
+    if: ${{needs.build.outputs.docsChange != 'docs only change'}}
+    name: Test
+    runs-on: ubuntu-latest
+    needs: [build]
+    strategy:
+      matrix:
+        node: ["14.x", "16.x"]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - name: Setup node ${{ matrix.node }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      # https://github.com/actions/virtual-environments/issues/1187
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
+
+      - name: Restore build
+        uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
+
+      - name: Run tests
+        run: yarn test
+
   release:
     if: ${{ needs.build.outputs.isRelease == 'true' }}
     name: Release
@@ -67,6 +115,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
+
+      # https://github.com/actions/virtual-environments/issues/1187
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
 
       - name: Restore build
         uses: actions/cache@v2

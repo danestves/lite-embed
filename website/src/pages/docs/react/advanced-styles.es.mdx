@@ -1,0 +1,37 @@
+import { YoutubeLite } from '@lite-embed/react';
+
+# Estilos avanzados
+
+Gracias a [`@stitches/react`](https://stitches.dev/) podemos personalizar los estilos del componente.
+
+```tsx
+// Dependencies
+import { YoutubeLite } from '@lite-embed/react';
+
+export default function App() {
+  return (
+    <YoutubeLite
+      css={{
+        transition: 'transform 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.1)',
+        },
+      }}
+      urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    />
+  );
+}
+```
+
+Ahora si pasas el ratón sobre el componente verás que se escalará al 110%. Puedes usar cualquier propiedad de CSS que quieras para personalizar el componente.
+
+<YoutubeLite
+  className="mt-6 rounded-lg"
+  css={{
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
+  }}
+  urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+/>

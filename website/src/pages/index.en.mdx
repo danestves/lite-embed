@@ -1,0 +1,107 @@
+---
+title: 'Easy embeds for your sites'
+---
+
+import { YoutubeLite } from '@lite-embed/react';
+
+{
+// wrapped with {} to mark it as javascript so mdx will not put it under a p tag
+}
+{<h1 className="text-center font-extrabold md:text-5xl mt-8">lite-embed ⚡️</h1>}
+
+{<p className="text-center text-gray-800 dark:text-gray-400">Embed iframes without hustle! Look a simple example below 👇</p>}
+
+<div className="max-w-2xl mt-8 mx-auto">
+  <YoutubeLite
+    urlOrId="https://www.youtube.com/watch?v=FZ0cG47msEk&list=PLNG_1j3cPCaZZ7etkzWA7JfdmKWT0pMsa"
+    className="rounded-lg"
+  />
+</div>
+
+`lite-embed` comes from lightweight embedding library. It's a simple and lightweight embedding library for your sites. Currently, only works with YouTube and Vimeo, but will be extended to support more providers soon.
+
+<div className="my-8 text-center">
+  [Get Started](/docs/getting-started/overview) · [GitHub
+  Repository](https://github.com/danestves/lite-embed)
+</div>
+
+## Overview
+
+```tsx
+import { Vimeo, YoutubeLite } from '@lite-embed/react';
+
+export default function App() {
+  return (
+    <>
+      <VimeoLite urlOrId="https://vimeo.com/476064230" />
+
+      <YoutubeLite urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+    </>
+  );
+}
+```
+
+```vue
+<script setup lang="ts">
+import { VimeoLite, YoutubeLite } from '@lite-embed/vue';
+</script>
+
+<template>
+  <div>
+    <vimeo-lite url-or-id="https://vimeo.com/476064230"></vimeo-lite>
+
+    <youtube-lite
+      url-or-id="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    ></youtube-lite>
+  </div>
+</template>
+```
+
+In these examples, we show a simple code snippet for React and Vue, the `urlOrId` is the only required prop and can be any type pf URL from YouTube/Vimeo and even a video ID from YouTube/Vimeo.
+
+Also, you can use the prop `aspectRatio` to set the aspect ratio of the embed, the default is `16 / 9`.
+
+## Features
+
+- Embed component that is **quick**, **light**, and **reusable**.
+- Load embeds without add extra seconds to your page.
+- Fully customizable.
+- SSR support.
+- TypeScript ready.
+
+And a lot [more](/docs/getting-started/overview).
+
+## Community
+
+<p className="flex flex-wrap space-x-2">
+  <img
+    alt="stars"
+    src="https://badgen.net/github/stars/danestves/lite-embed"
+    className="h-6"
+  />
+  <img
+    alt="@lite-embed/react downloads"
+    src="https://badgen.net/npm/dt/@lite-embed/react?label=@lite-embed/react%20-%20downloads"
+    className="h-6"
+  />
+  <img
+    alt="@lite-embed/vue downloads"
+    src="https://badgen.net/npm/dt/@lite-embed/vue?label=@lite-embed/vue%20-%20downloads"
+    className="h-6"
+  />
+</p>
+
+<p className="flex flex-wrap space-x-2">
+  <img
+    alt="@lite-embed/react license"
+    src="https://badgen.net/npm/license/@lite-embed/react?label=@lite-embed/react%20-%20license"
+    className="h-6"
+  />
+  <img
+    alt="@lite-embed/vue license"
+    src="https://badgen.net/npm/license/@lite-embed/vue?label=@lite-embed/vue%20-%20license"
+    className="h-6"
+  />
+</p>
+
+Feel free to join the [discussions on GitHub](https://github.com/danestves/lite-embed/discussions)!
