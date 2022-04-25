@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/utils",
-  "version": "1.0.0-canary.7",
+  "version": "1.0.0",
   "description": "Utility function for the components.",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
