@@ -59,8 +59,11 @@ const config = {
     );
   },
   footerText: `MIT ${new Date().getFullYear()} © Daniel Esteves.`,
-  head: ({ meta, title }) => {
-    let ogImage = meta.image ?? 'https://lite-embed.vercel.app/og.jpg';
+  head: ({ meta, ...props }) => {
+    const ogImage = meta.image ?? 'https://lite-embed.vercel.app/og.jpg';
+    const title = props.title
+      ? props.title + ' – lite-embed'
+      : 'Lite Embed: Embed videos on your website without extra work';
 
     return (
       <>
@@ -86,17 +89,15 @@ const config = {
 
         <meta content={meta.description ?? DESCRIPTION} name="description" />
         <meta content={meta.description ?? DESCRIPTION} name="og:description" />
+        <meta
+          content={meta.description ?? DESCRIPTION}
+          name="twitter:description"
+        />
         <meta content="summary_large_image" name="twitter:card" />
         <meta content="@danestves" name="twitter:site" />
         <meta content={ogImage} name="twitter:image" />
-        <meta
-          content={
-            title
-              ? title + ' – lite-embed'
-              : 'Lite Embed: Embed videos on your website without extra work'
-          }
-          name="og:title"
-        />
+        <meta content={title} name="twitter:title" />
+        <meta content={title} name="og:title" />
         <meta content={ogImage} name="og:image" />
         <meta content="Lite Embed" name="apple-mobile-web-app-title" />
       </>
