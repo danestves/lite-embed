@@ -1,7 +1,7 @@
 {
   "name": "@lite-embed/vue",
   "version": "1.0.0-canary.7",
-  "description": "> TODO: description",
+  "description": "Embed a YouTube or Vimeo video in your Vue app",
   "homepage": "https://lite-embed.vercel.app/docs/vue/installation",
   "bugs": {
     "url": "https://github.com/danestves/lite-embed/issues"

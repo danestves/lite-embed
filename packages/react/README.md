@@ -1,36 +1,19 @@
-# `@lite-embed/react`
+# @lite-embed/react
 
-Embed a YouTube or Vimeo video in your React app
+This package hosts the React components to use with the lite-embed library.
 
-```bash
-npm add @lite-embed/react
-# or
+## Installation
+
+Install the package in your project directory with:
+
+```sh
+// with npm
+npm install @lite-embed/react
+
+// with yarn
 yarn add @lite-embed/react
 ```
 
-## Usage
+## Documentation
 
-```tsx
-// Dependencies
-import { Vimeo, YoutubeLite } from '@lite-embed/react';
-
-export default function App() {
-  return (
-    <>
-      <YoutubeLite
-        urlOrId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        // or
-        // urlOrId="dQw4w9WgXcQ"
-      />
-
-      <VimeoLite
-        urlOrId="https://vimeo.com/476064230"
-        // or
-        // urlOrId="476064230"
-      />
-    </>
-  );
-}
-```
-
-For an advanced use, please refer to the [docs](https://lite-embed.vercel.app/docs/react/installation)
+[The documentation](https://lite-embed.vercel.app/docs/react/quick-start)

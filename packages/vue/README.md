@@ -1,34 +1,19 @@
-# `@lite-embed/vue`
+# @lite-embed/vue
 
-Embed a YouTube or Vimeo video in your Vue app
+This package hosts the Vue components to use with the lite-embed library.
 
-```bash
-npm add @lite-embed/vue
-# or
+## Installation
+
+Install the package in your project directory with:
+
+```sh
+// with npm
+npm install @lite-embed/vue
+
+// with yarn
 yarn add @lite-embed/vue
 ```
 
-## Usage
+## Documentation
 
-```vue
-<script setup lang="ts">
-// Dependencies
-import { VimeoLite, YoutubeLite } from '@lite-embed/vue';
-</script>
-
-<template>
-  <div>
-    <vimeo-lite url-or-id="https://vimeo.com/476064230"></vimeo-lite>
-    <!-- or -->
-    <vimeo-lite url-or-id="476064230"></vimeo-lite>
-
-    <youtube-lite
-      url-or-id="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    ></youtube-lite>
-    <!-- or -->
-    <youtube-lite url-or-id="dQw4w9WgXcQ"></youtube-lite>
-  </div>
-</template>
-```
-
-For an advanced use, please refer to the [docs](https://lite-embed.vercel.app/docs/vue/installation)
+[The documentation](https://lite-embed.vercel.app/docs/vue/quick-start)
