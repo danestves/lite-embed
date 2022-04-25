@@ -37,9 +37,7 @@ const TITLE_WITH_TRANSLATIONS = {
 };
 
 const DESCRIPTION = endent`
-  Lite Embed is an NPM package that allows you to add embedded videos to your website without a lot of extra work.
-
-  It's lightweight and easy to set up and use.
+  Lite Embed is an NPM package that allows you to add embedded videos to your website without a lot of extra work. It's lightweight and easy to set up and use.
 `;
 
 const config = {
