@@ -87,7 +87,7 @@ const config = {
         <meta content={meta.description ?? DESCRIPTION} name="description" />
         <meta content={meta.description ?? DESCRIPTION} name="og:description" />
         <meta content="summary_large_image" name="twitter:card" />
-        <meta content="@vercel" name="twitter:site" />
+        <meta content="@danestves" name="twitter:site" />
         <meta content={ogImage} name="twitter:image" />
         <meta
           content={
