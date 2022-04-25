@@ -1,0 +1,37 @@
+# Propiedades
+
+## Vimeo
+
+### Requerido
+
+- `urlOrId`: Puede ser una URL o un ID de vídeo. Admite cualquier tipo de formato de URL o ID, gracias a una potente [regex](https://github.com/danestves/lite-embed/blob/canary/packages/utils/src/get-vimeo-id.ts).
+
+### Opcional
+
+- `adNetwork`: por defecto los anuncios están desactivados para respetar la privacidad de los usuarios. Puedes habilitarlos estableciendo esto como `true`.
+- `aspectRatio`: por defecto el video es `16:9`. Puedes cambiarlo poniendo `4 / 3`, `1 / 1` o cualquier valor que quieras usar.
+- `css`: esta es una prop especial que te permite sobrescribir los estilos del elemento contenedor gracias a [`@stitches/react`](https://stitches.dev/).
+- `customThumbnail`: permite utilizar una miniatura personalizada en lugar de la proporcionada por el vídeo.
+- `iframeProps`: puedes anular cualquiera de las propiedades del elemento `<iframe />`. También viene con una propiedad `css`.
+- `playerParameters`: puedes pasar cualquier parámetro al reproductor gracias a las [embed options](https://developer.vimeo.com/player/sdk/embed) que nos da Vimeo.
+- `poster`: permite definir una miniatura de dimensiones personalizadas.
+- `title`: puedes definir un título personalizado que se utilizará como `title` dentro del elemento `<iframe />` para cubrir los problemas de accesibilidad.
+
+## YouTube
+
+### Requerido
+
+- `urlOrId`: Puede ser una URL o un ID de vídeo. Admite cualquier tipo de formato de URL o ID, gracias a una potente [regex](https://github.com/danestves/lite-embed/blob/canary/packages/utils/src/get-youtube-id.ts).
+
+### Optional
+
+- `adNetwork`: por defecto los anuncios están desactivados para respetar la privacidad de los usuarios. Puedes habilitarlos estableciendo esto como `true`.
+- `aspectRatio`: por defecto el video es `16:9`. Puedes cambiarlo poniendo `4 / 3`, `1 / 1` o cualquier valor que quieras usar.
+- `css`: esta es una prop especial que te permite sobrescribir los estilos del elemento contenedor gracias a [`@stitches/react`](https://stitches.dev/).
+- `customThumbnail`: permite utilizar una miniatura personalizada en lugar de la proporcionada por el vídeo.
+- `iframeProps`: puedes anular cualquiera de las propiedades del elemento `<iframe />`. También viene con una propiedad `css`.
+- `noCookie`: por defecto las cookies están deshabilitadas, esto es útil si utilizas GDPR y no quieres las cookies de YouTube. Puedes establecer esta opción en `false` para habilitar las cookies.
+- `playerParameters`: puedes pasar cualquier parámetro al reproductor gracias a los [supported parameters](https://developers.google.com/youtube/player_parameters#Parameters) que Google nos da para incrustar vídeos.
+- `playlist`: si estás incrustando una lista de reproducción, puedes ponerlo a `true` para habilitar la lista de reproducción.
+- `poster`: permite definir una miniatura de calidad personalizada.
+- `title`: puedes definir un título personalizado que se utilizará como `title` dentro del elemento `<iframe />` para cubrir los problemas de accesibilidad.

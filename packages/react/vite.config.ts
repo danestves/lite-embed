@@ -1,21 +1,21 @@
 /// <reference types="vitest" />
 
 // Dependencies
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
-import { defineConfig } from "vite";
-import rollupNodePolyFill from "rollup-plugin-node-polyfills";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // Internals
-import { peerDependencies, dependencies } from "./package.json";
+import { peerDependencies, dependencies } from './package.json';
 
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, "src", "index.ts"),
-      formats: ["cjs", "es"],
+      entry: resolve(__dirname, 'src', 'index.ts'),
+      formats: ['cjs', 'es'],
       fileName: (ext) => `lite-embed-react.${ext}.js`,
     },
     rollupOptions: {
@@ -25,13 +25,13 @@ export default defineConfig({
       ],
       plugins: [rollupNodePolyFill()],
     },
-    target: "esnext",
+    target: 'esnext',
     sourcemap: true,
   },
   optimizeDeps: {
     esbuildOptions: {
       define: {
-        global: "globalThis",
+        global: 'globalThis',
       },
       plugins: [
         NodeGlobalsPolyfillPlugin({
@@ -43,21 +43,21 @@ export default defineConfig({
   },
   plugins: [
     react({
-      jsxRuntime: "classic",
+      jsxRuntime: 'classic',
     }),
     tsconfigPaths(),
   ],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
+      '@': resolve(__dirname, 'src'),
     },
   },
   test: {
     coverage: {
-      reporter: ["text", "json", "html"],
+      reporter: ['text', 'json', 'html'],
     },
-    environment: "jsdom",
+    environment: 'jsdom',
     globals: true,
-    setupFiles: "./jest.setup.ts",
+    setupFiles: './jest.setup.ts',
   },
 });

@@ -1,0 +1,33 @@
+# Props
+
+## Vimeo
+
+### Required
+
+- `urlOrId`: This can be either an url to a video or a video ID. It supports any kind of URL format or ID, thanks to a powerful [regex](https://github.com/danestves/lite-embed/blob/canary/packages/utils/src/get-vimeo-id.ts).
+
+### Optional
+
+- `adNetwork`: by default the ads are disabled to respect the privacy of the users. You can enable them by setting this to `true`.
+- `aspectRatio`: by default the video is `16:9`. You can change this by setting this to `4 / 3`, `1 / 1` or any values that you want to use.
+- `customThumbnail`: allow you to use a custom thumbnail instead of the one provided by the video.
+- `playerParameters`: you can pass any parameters to the player thanks to the [embed options](https://developer.vimeo.com/player/sdk/embed) that Vimeo give us.
+- `poster`: allow you to define a custom dimension thumbnail.
+- `title`: you can define a custom title to be used as `title` inside the `<iframe />` element to cover the accessibility issues.
+
+## YouTube
+
+### Required
+
+- `urlOrId`: This can be either an url to a video or a video ID. It supports URLs like `https://www.youtube.com/watch?v=<id>`, `https://youtu.be/<id>`, `<id>` and more thanks to a powerful [regex](https://github.com/danestves/lite-embed/blob/canary/packages/utils/src/get-youtube-id.ts).
+
+### Optional
+
+- `adNetwork`: by default the ads are disabled to respect the privacy of the users. You can enable them by setting this to `true`.
+- `aspectRatio`: by default the video is `16:9`. You can change this by setting this to `4 / 3`, `1 / 1` or any values that you want to use.
+- `customThumbnail`: allow you to use a custom thumbnail instead of the one provided by the video.
+- `noCookie`: by default the cookies are disabled, this is useful if you use GDPR and don't want YouTube cookies. You can set this option to `false` to enable the cookies.
+- `playerParameters`: you can pass any parameters to the player thanks to the [supported parameters](https://developers.google.com/youtube/player_parameters#Parameters) that Google give us to embed videos.
+- `playlist`: if you are embedding a playlist, you can set this to `true` to enable the playlist.
+- `poster`: allow you to define a custom quality thumbnail.
+- `title`: you can define a custom title to be used as `title` inside the `<iframe />` element to cover the accessibility issues.
