@@ -192,19 +192,19 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@lite-embed/react@^1.0.0-canary.7":
-  version "1.0.0-canary.7"
-  resolved "https://registry.yarnpkg.com/@lite-embed/react/-/react-1.0.0-canary.7.tgz#5350c36981ff4e8077404d7bfb017b05a01404ba"
-  integrity sha512-Zl4rp2A7/gQgScUiVsUx64saQa+vA+3J+kccfKesZ8CWyfWvhB5/L5/qVKOxkq+J9bt5pum0UnKzshPTdNuaMg==
+"@lite-embed/react@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lite-embed/react/-/react-1.0.0.tgz#31aa37f02e5f0d0f2fac4e25e018800e60ba8e2a"
+  integrity sha512-dvaTzx8Xn+CkUJO5Dnm1p7feOqPsEwxT9ZMjT/4y28E67jjVeHZLdOg68WwaeW7CE40xGuEr1BlWooLZ5rK/Cg==
   dependencies:
-    "@lite-embed/utils" "1.0.0-canary.7"
+    "@lite-embed/utils" "1.0.0"
     "@radix-ui/react-aspect-ratio" "^0.1.4"
-    "@stitches/react" "^1.2.7"
+    "@stitches/react" "^1.2.8"
 
-"@lite-embed/utils@1.0.0-canary.7":
-  version "1.0.0-canary.7"
-  resolved "https://registry.yarnpkg.com/@lite-embed/utils/-/utils-1.0.0-canary.7.tgz#98d6dfac6aa80a200028909b6b674cbba3384758"
-  integrity sha512-qRo+AIblZ3JNw49d429JTNnqFwBVPNoezXspGE4IAscJfyPwQgg/RUU9Q0F/S0Ko4aKH1716oqnIa4qGQrvAJw==
+"@lite-embed/utils@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@lite-embed/utils/-/utils-1.0.0.tgz#d980e89826be8b8813378eb3d5d194347d5b5f11"
+  integrity sha512-ZObbRGK19p7dBmx9rsQDgKWsPCxt/IEwHipJRaVLp+i+gE8rDB6SFgi4Da7QDuvEUNFet/uPP26jM6HS9NOq9w==
   dependencies:
     browser-monads-ts "^2.0.1"
 
@@ -521,10 +521,10 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.0.8.tgz#be3e914e84eacf16dbebd311c0d0b44aa1174c64"
   integrity sha512-ZK5v4bJwgXldAUA8r3q9YKfCwOqoHTK/ZqRjSeRXQrBXWouoPnS4MQtgC4AXGiiBuUu5wxrRgTlv0ktmM4P1Aw==
 
-"@stitches/react@^1.2.7":
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.7.tgz#aea2403fac726db66d1740d29557e3910b1a1dc7"
-  integrity sha512-6AxpUag7OW55ANzRnuy7R15FEyQeZ66fytVo3BBilFIU0mfo3t49CAMcEAL/A1SbhSj/FCdWkn/XrbjGBTJTzg==
+"@stitches/react@^1.2.8":
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.8.tgz#954f8008be8d9c65c4e58efa0937f32388ce3a38"
+  integrity sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==
 
 "@types/acorn@^4.0.0":
   version "4.0.6"
