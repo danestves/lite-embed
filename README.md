@@ -35,7 +35,7 @@ Visit https://lite-embed.vercel.app to get started with `lite-embed`.
 
 ## Documentation
 
-Visit https://lite-embed.vercel.app/docs to view the full documentation
+Visit https://lite-embed.vercel.app/docs/getting-started/overview to view the full documentation
 
 ## Comumunity
 
