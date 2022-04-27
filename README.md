@@ -1,4 +1,7 @@
 <p align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <a href="https://lite-embed.vercel.app">
     <img src="https://res.cloudinary.com/danestves/image/upload/v1650917874/lite-embed-logo.png" height="128">
     <h1 align="center">lite-embed ⚡️</h1>
@@ -51,3 +54,23 @@ Feel free to check [issues page](https://github.com/danestves/lite-embed/issues)
 ## License
 
 [MIT License](LICENSE) Copyright (c) 2022 [Daniel Esteves](https://danestves.com/).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://renejfc.dev"><img src="https://avatars.githubusercontent.com/u/60465053?v=4?s=100" width="100px;" alt=""/><br /><sub><b>René</b></sub></a><br /><a href="https://github.com/danestves/lite-embed/commits?author=renejfc" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
