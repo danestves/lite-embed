@@ -5,11 +5,13 @@
   </a>
 </p>
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+  
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+  
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 <p align="center">
-  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-  [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-  <!-- ALL-CONTRIBUTORS-BADGE:END -->
-  <br />
   <a aria-label="NPM version" href="https://www.npmjs.com/package/@lite-embed/react">
     <img alt="" src="https://badgen.net/npm/v/@lite-embed/react?label=@lite-embed/react">
   </a>
