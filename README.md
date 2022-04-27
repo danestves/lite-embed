@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <a href="https://lite-embed.vercel.app">
     <img src="https://res.cloudinary.com/danestves/image/upload/v1650917874/lite-embed-logo.png" height="128">
     <h1 align="center">lite-embed ⚡️</h1>
@@ -9,6 +6,10 @@
 </p>
 
 <p align="center">
+  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+  [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+  <!-- ALL-CONTRIBUTORS-BADGE:END -->
+  <br />
   <a aria-label="NPM version" href="https://www.npmjs.com/package/@lite-embed/react">
     <img alt="" src="https://badgen.net/npm/v/@lite-embed/react?label=@lite-embed/react">
   </a>
@@ -51,10 +52,6 @@ Please note that this project is released with a [Contributor Code of Conduct](/
 Contributions, issues and feature requests are welcome!
 Feel free to check [issues page](https://github.com/danestves/lite-embed/issues). You can also take a look at the [contributing guide](/contributing.md).
 
-## License
-
-[MIT License](LICENSE) Copyright (c) 2022 [Daniel Esteves](https://danestves.com/).
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -74,3 +71,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+[MIT License](LICENSE) Copyright (c) 2022 [Daniel Esteves](https://danestves.com/).
