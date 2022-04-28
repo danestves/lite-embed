@@ -8,7 +8,7 @@
   "scripts": {
     "coverage": "lerna run coverage",
     "test": "lerna run test",
-    "build": "yarn prepublish",
+    "build": "yarn prepublishOnly",
     "lerna": "lerna",
     "prepublishOnly": "lerna run prepublish",
     "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish",
