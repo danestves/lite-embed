@@ -17,6 +17,7 @@ jobs:
     outputs:
       isRelease: ${{ steps.check-release.outputs.IS_RELEASE }}
     steps:
+      - uses: actions/checkout@v3
       - name: Setup node
         uses: actions/setup-node@v3
         with:
