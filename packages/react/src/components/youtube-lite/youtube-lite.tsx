@@ -66,6 +66,7 @@ function RenderYouTubeLite(
       css={{
         backgroundImage: `url(${posterUrl})`,
         ...css,
+        '&::before': { content: iframe ? 'none' : '""' },
       }}
       data-title={title}
       onClick={addIframe}
