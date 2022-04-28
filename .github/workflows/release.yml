@@ -10,16 +10,23 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    # To use Turborepo Remote Caching.
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     outputs:
       isRelease: ${{ steps.check-release.outputs.IS_RELEASE }}
     steps:
+      - uses: actions/checkout@v3
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: "yarn"
+          cache-dependency-path: yarn.lock
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 25
 
@@ -47,7 +54,7 @@ jobs:
           fi
 
       - name: Cache build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-build
         with:
           path: ./*
@@ -57,15 +64,19 @@ jobs:
     if: ${{needs.build.outputs.docsChange != 'docs only change'}}
     name: Lint
     runs-on: ubuntu-latest
+    # To use Turborepo Remote Caching.
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     needs: [build]
     steps:
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14
 
       - name: Restore build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*
@@ -78,6 +89,10 @@ jobs:
     if: ${{needs.build.outputs.docsChange != 'docs only change'}}
     name: Test
     runs-on: ubuntu-latest
+    # To use Turborepo Remote Caching.
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     needs: [build]
     strategy:
       matrix:
@@ -85,7 +100,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - name: Setup node ${{ matrix.node }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -94,7 +109,7 @@ jobs:
         run: sudo ethtool -K eth0 tx off rx off
 
       - name: Restore build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*
@@ -112,7 +127,7 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14
 
@@ -121,7 +136,7 @@ jobs:
         run: sudo ethtool -K eth0 tx off rx off
 
       - name: Restore build
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: restore-build
         with:
           path: ./*

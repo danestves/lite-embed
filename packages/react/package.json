@@ -15,12 +15,12 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/lite-embed-react.cjs.js",
-      "import": "./dist/lite-embed-react.es.js"
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.es.js"
     }
   },
-  "main": "dist/lite-embed-react.cjs.js",
-  "module": "dist/lite-embed-react.es.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "src": "src"
@@ -40,20 +40,25 @@
     "coverage": "vitest run --coverage",
     "dev": "vite",
     "format": "prettier --write 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
-    "lint": "eslint 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
+    "lint": "TIMING=1 eslint 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
     "preview": "vite preview",
     "prepublish": "yarn build",
     "test": "vitest run"
   },
   "dependencies": {
-    "@lite-embed/utils": "1.0.0",
+    "@lite-embed/utils": "^1.0.0",
     "@radix-ui/react-aspect-ratio": "^0.1.4",
     "@stitches/react": "^1.2.8"
   },
   "devDependencies": {
     "@testing-library/react": "^13.1.1",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.29.4"
+    "eslint-plugin-react": "^7.29.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "peerDependencies": {
     "react": "^16.x || ^17.x || ^18.x"

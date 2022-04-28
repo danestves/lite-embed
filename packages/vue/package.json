@@ -15,13 +15,13 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./dist/lite-embed-vue.es.js",
-      "require": "./dist/lite-embed-vue.umd.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "main": "dist/lite-embed-vue.umd.js",
-  "module": "dist/lite-embed-vue.es.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "src": "src"
@@ -38,21 +38,23 @@
     "coverage": "vitest run --coverage",
     "dev": "vite",
     "format": "prettier --write 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
-    "lint": "eslint 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
+    "lint": "TIMING=1 eslint 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
     "preview": "vite preview",
     "prepublish": "yarn build",
     "test": "vitest run"
   },
   "dependencies": {
-    "@lite-embed/utils": "1.0.0"
+    "@lite-embed/utils": "^1.0.0"
   },
   "devDependencies": {
     "@testing-library/vue": "^6.5.1",
+    "@vitejs/plugin-vue": "^2.3.1",
     "@vue/eslint-config-typescript": "^10.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.7.1",
     "eslint-plugin-vuejs-accessibility": "^1.1.1",
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue-tsc": "^0.34.10"
   },
   "peerDependencies": {
     "vue": "^3.2.33"
