@@ -38,7 +38,7 @@
     "coverage": "vitest run --coverage",
     "dev": "vite",
     "format": "prettier --write 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
-    "lint": "eslint 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
+    "lint": "TIMING=1 eslint 'src/**/*.{ts,vue}' '__tests__/**/*.{ts,vue}'",
     "preview": "vite preview",
     "prepublish": "yarn build",
     "test": "vitest run"

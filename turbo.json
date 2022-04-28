@@ -9,7 +9,7 @@
     "prepublish": {
       "outputs": ["**/dist/**"]
     },
-    "lint": {},
+    "lint": { "outputs": [] },
     "format": {}
   }
 }
