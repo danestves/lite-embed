@@ -11,6 +11,17 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 // Internals
 import { dependencies, peerDependencies } from './package.json';
 
+const externalPackages = [
+  ...Object.keys(dependencies),
+  ...Object.keys(peerDependencies),
+];
+
+// Creating regexes of the packages to make sure subpaths of the
+// packages are also treated as external
+const regexesOfPackages = externalPackages.map(
+  (packageName) => new RegExp(`^${packageName}(/.*)?`)
+);
+
 export default defineConfig({
   build: {
     lib: {
@@ -20,15 +31,30 @@ export default defineConfig({
       name: 'LiteEmbedVue',
     },
     rollupOptions: {
-      external: [
-        ...Object.keys(dependencies),
-        ...Object.keys(peerDependencies),
-      ],
-      output: {
-        globals: {
-          vue: 'Vue',
+      external: regexesOfPackages,
+      output: [
+        {
+          dir: resolve(__dirname, 'dist'),
+          entryFileNames: '[name].umd.js',
+          format: 'umd',
+          globals: {
+            '@lite-embed/utils': '@lite-embed/utils',
+            vue: 'Vue',
+          },
         },
-      },
+        {
+          dir: resolve(__dirname, 'dist'),
+          entryFileNames: '[name].es.js',
+          exports: 'named',
+          format: 'es',
+          globals: {
+            '@lite-embed/utils': '@lite-embed/utils',
+            vue: 'Vue',
+          },
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+        },
+      ],
       plugins: [rollupNodePolyFill()],
     },
     target: 'esnext',

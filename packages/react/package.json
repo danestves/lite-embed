@@ -15,12 +15,12 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "require": "./dist/lite-embed-react.cjs.js",
-      "import": "./dist/lite-embed-react.es.js"
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.es.js"
     }
   },
-  "main": "dist/lite-embed-react.cjs.js",
-  "module": "dist/lite-embed-react.es.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "src": "src"
