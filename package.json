@@ -14,6 +14,7 @@
     "publish:canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish",
     "publish:canary:major": "git checkout canary && git pull && lerna version premajor --preid canary --force-publish",
     "publish:canary:minor": "git checkout canary && git pull && lerna version preminor --preid canary --force-publish",
+    "publish:canary:patch": "git checkout canary && git pull && lerna version prepatch --preid canary --force-publish",
     "publish:stable": "lerna version --force-publish",
     "clean": "lerna clean -y && lerna bootstrap && lerna exec 'rm -rf ./dist'",
     "lint": "turbo run lint",
