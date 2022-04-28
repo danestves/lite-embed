@@ -52,8 +52,12 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.1.1",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.29.4"
+    "eslint-plugin-react": "^7.29.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "peerDependencies": {
     "react": "^16.x || ^17.x || ^18.x"
