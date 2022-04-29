@@ -108,6 +108,7 @@ const addIframe = () => {
 <template>
   <aspect-ratio
     :aspect-ratio="aspectRatio"
+    :class="{ 'le-yt-iframe-active': iframe }"
     @click="addIframe"
     @pointerover="warmConnections"
   >
@@ -150,6 +151,10 @@ const addIframe = () => {
   transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
   width: 100%;
   z-index: 25;
+}
+
+.le-aspect-ratio-item.le-yt-iframe-active::before {
+  content: none;
 }
 
 .le-yt-iframe {

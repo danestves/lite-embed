@@ -16,6 +16,6 @@
     "declaration": true,
     "declarationMap": true
   },
-  "include": ["src"],
+  "include": ["src", "vitest"],
   "exclude": ["node_modules"]
 }

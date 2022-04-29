@@ -9,7 +9,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            crossOrigin=""
+            href="https://1GWUBOSFHQ-dsn.algolia.net"
+            rel="preconnect"
+          />
+        </Head>
 
         <body>
           <SkipNavLink />

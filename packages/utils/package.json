@@ -1,6 +1,6 @@
 {
   "name": "@lite-embed/utils",
-  "version": "1.0.0",
+  "version": "1.0.1-canary.0",
   "description": "Utility function for the components.",
   "homepage": "https://github.com/danestves/lite-embed#readme",
   "bugs": {
@@ -15,12 +15,12 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./dist/lite-embed-utils.es.js",
-      "require": "./dist/lite-embed-utils.umd.js"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     }
   },
-  "main": "dist/lite-embed-utils.umd.js",
-  "module": "dist/lite-embed-utils.es.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "directories": {
     "src": "src"
@@ -37,16 +37,16 @@
     "coverage": "vitest run --coverage",
     "dev": "vite",
     "format": "prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
-    "lint": "eslint src/**/*.ts __tests__/**/*.ts",
+    "lint": "TIMING=1 eslint src/**/*.ts __tests__/**/*.ts",
     "preview": "vite preview",
     "prepublish": "yarn build",
-    "test": "vitest run"
+    "test": "vitest run --threads=false"
   },
   "dependencies": {
     "browser-monads-ts": "^2.0.1"
   },
   "devDependencies": {
-    "happy-dom": "^2.55.0"
+    "happy-dom": "^3.1.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,6 +1,9 @@
 // Dependencies
 import endent from 'endent';
 
+// Internals
+import DocSearch from './src/components/dosearch';
+
 /**
  * @param {import("react").SVGProps<SVGSVGElement>} props
  */
@@ -41,6 +44,7 @@ const DESCRIPTION = endent`
 `;
 
 const config = {
+  customSearch: <DocSearch />,
   docsRepositoryBase: endent`
     https://github.com/danestves/lite-embed/blob/canary/website/src/pages
   `,
