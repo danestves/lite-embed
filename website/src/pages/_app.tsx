@@ -1,8 +1,11 @@
 // Dependencies
 import * as Fathom from 'fathom-client';
 import * as React from 'react';
+import Script from 'next/script';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+
+import '@docsearch/css';
 
 // Internals
 import '~/styles/tailwind.css';
@@ -37,7 +40,7 @@ export default function MyApp({
     };
   }, [router.events]);
 
-  let getLayout = Component.getLayout ?? ((page) => page);
+  const getLayout = Component.getLayout ?? ((page) => page);
 
   return getLayout(<Component {...pageProps} />);
 }
