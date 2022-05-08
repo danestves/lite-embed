@@ -16,7 +16,7 @@
       "@/*": ["src/*"]
     },
     "target": "esnext",
-    "types": ["vue"],
+    "types": ["vue", "vitest/globals"],
     "useDefineForClassFields": true
   },
   "include": ["src"],
