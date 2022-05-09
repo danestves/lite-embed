@@ -14,8 +14,9 @@
     "noImplicitReturns": true,
     "outDir": "dist",
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["src", "vitest"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
