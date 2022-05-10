@@ -46,7 +46,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@lite-embed/utils": "1.0.2",
+    "@lite-embed/utils": "workspace:^",
     "@radix-ui/react-aspect-ratio": "^0.1.4",
     "@stitches/react": "^1.2.8"
   },

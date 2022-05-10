@@ -2,9 +2,6 @@
   "name": "lite-embed-project",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "coverage": "turbo run coverage",
     "test": "turbo run test",
@@ -26,11 +23,11 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@types/node": "^17.0.31",
     "@types/vimeo__player": "^2.16.3",
-    "@types/ws": "^8.5.3",
     "@types/youtube-player": "^5.5.6",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
     "c8": "^7.11.2",
+    "esbuild": "^0.14.38",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "isomorphic-fetch": "^3.0.0",
