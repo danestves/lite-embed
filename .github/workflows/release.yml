@@ -22,8 +22,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
-          cache: "yarn"
-          cache-dependency-path: yarn.lock
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,7 +34,7 @@ jobs:
         run: sudo ethtool -K eth0 tx off rx off
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --check-files
+        run: pnpm install --frozen-lockfile
 
       - name: Fetch git tags
         run: node ./scripts/fetch-tags.mjs ${{ github.sha }}
@@ -74,6 +74,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Restore build
         uses: actions/cache@v3
@@ -83,7 +85,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
 
       - name: Lint
-        run: yarn lint
+        run: pnpm lint
 
   test:
     if: ${{needs.build.outputs.docsChange != 'docs only change'}}
@@ -103,6 +105,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
 
       # https://github.com/actions/virtual-environments/issues/1187
       - name: tune linux network
@@ -116,7 +120,7 @@ jobs:
           key: ${{ github.sha }}-${{ github.run_number }}-${{ github.run_attempt }}
 
       - name: Run tests
-        run: yarn test
+        run: pnpm test
 
   release:
     if: ${{ needs.build.outputs.isRelease == 'true' }}
@@ -130,6 +134,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
 
       # https://github.com/actions/virtual-environments/issues/1187
       - name: tune linux network
