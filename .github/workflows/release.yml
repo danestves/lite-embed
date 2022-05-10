@@ -18,6 +18,9 @@ jobs:
       isRelease: ${{ steps.check-release.outputs.IS_RELEASE }}
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.1
       - name: Setup node
         uses: actions/setup-node@v3
         with:
@@ -70,6 +73,10 @@ jobs:
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     needs: [build]
     steps:
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.1
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
@@ -101,6 +108,10 @@ jobs:
         node: ["14.x", "16.x"]
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.1
+
       - name: Setup node ${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
@@ -130,6 +141,10 @@ jobs:
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 7.0.1
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
