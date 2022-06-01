@@ -51,10 +51,10 @@
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-typescript": "^10.0.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^9.0.1",
-    "eslint-plugin-vuejs-accessibility": "^1.1.1",
+    "eslint-plugin-vue": "^9.1.0",
+    "eslint-plugin-vuejs-accessibility": "^1.2.0",
     "vue": "^3.2.36",
-    "vue-tsc": "^0.34.16"
+    "vue-tsc": "^0.35.2"
   },
   "peerDependencies": {
     "vue": "^3.2.36"
